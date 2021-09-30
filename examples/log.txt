@@ -1,0 +1,4197 @@
+Whirl simulator log
+--------------------------------------------------------------------------------
+[T 0 | 0]	[Info   ]	[World          ]	[World       ]	Seed: 1063996491
+[T 118 | 0]	[Info   ]	[World          ]	[World       ]	Cluster: 3, clients: 3
+[T 118 | 0]	[Info   ]	[World          ]	[World       ]	Starting cluster...
+[T 118 | 0]	[Info   ]	[Server-kv-1    ]	[Server      ]	Starting process
+[T 118 | 0]	[Info   ]	[Server-kv-2    ]	[Server      ]	Starting process
+[T 118 | 0]	[Info   ]	[Server-kv-3    ]	[Server      ]	Starting process
+[T 118 | 0]	[Info   ]	[World          ]	[World       ]	Starting clients...
+[T 118 | 0]	[Info   ]	[Client-1       ]	[Server      ]	Starting process
+[T 118 | 0]	[Info   ]	[Client-2       ]	[Server      ]	Starting process
+[T 118 | 0]	[Info   ]	[Client-3       ]	[Server      ]	Starting process
+[T 118 | 0]	[Info   ]	[World          ]	[World       ]	Starting adversaries...
+[T 118 | 0]	[Info   ]	[World          ]	[World       ]	World started
+[T 118 | 2]	[Info   ]	[Server-kv-1 /T1]	[Terminal    ]	Stdout("Starting at T683")
+[T 118 | 2]	[Info   ]	[Server-kv-1 /T1]	[Filesystem  ]	Create file '/db/wal'
+[T 118 | 2]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	Replaying WAL -> MemTable
+[T 118 | 4]	[Info   ]	[Server-kv-2 /T1]	[Terminal    ]	Stdout("Starting at T791")
+[T 118 | 4]	[Info   ]	[Server-kv-2 /T1]	[Filesystem  ]	Create file '/db/wal'
+[T 118 | 4]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	Replaying WAL -> MemTable
+[T 118 | 6]	[Info   ]	[Server-kv-3 /T1]	[Terminal    ]	Stdout("Starting at T240")
+[T 118 | 6]	[Info   ]	[Server-kv-3 /T1]	[Filesystem  ]	Create file '/db/wal'
+[T 118 | 6]	[Info   ]	[Server-kv-3 /T1]	[Database    ]	Replaying WAL -> MemTable
+[T 121 | 13]	[Info   ]	[Server-kv-3 /T1]	[Database    ]	MemTable populated
+[T 121 | 13]	[Info   ]	[Server-kv-3 /T1]	[Transport   ]	Serving at port 42
+[T 121 | 13]	[Info   ]	[Server-kv-3 /T1]	[RPC-Server  ]	Serving at port 42
+[T 129 | 14]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	MemTable populated
+[T 129 | 14]	[Info   ]	[Server-kv-2 /T1]	[Transport   ]	Serving at port 42
+[T 129 | 14]	[Info   ]	[Server-kv-2 /T1]	[RPC-Server  ]	Serving at port 42
+[T 130 | 15]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	MemTable populated
+[T 130 | 15]	[Info   ]	[Server-kv-1 /T1]	[Transport   ]	Serving at port 42
+[T 130 | 15]	[Info   ]	[Server-kv-1 /T1]	[RPC-Server  ]	Serving at port 42
+[T 212 | 18]	[Info   ]	[Client-3 /main ]	[Client      ]	Execute Set(a, 40)
+[T 212 | 19]	[Info   ]	[Client-3       ]	[RPC-Channel ]	[Set-guid-X-1]	Request Server-kv-2:42.KV.Set
+[T 212 | 19]	[Info   ]	[Client-3       ]	[Transport   ]	[Set-guid-X-1]	Connecting to Server-kv-2:42: local port = 1
+[T 212 | 19]	[Info   ]	[Client-3       ]	[Network     ]	[Set-guid-X-1]	Send packet to Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 1,
+        "trace_id": "Set-guid-X-1",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "KV",
+            "name": "Set"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": \"40\"\n    }\n}"
+    }
+}>
+[T 221 | 20]	[Info   ]	[Client-2 /main ]	[Client      ]	Execute Get(a)
+[T 221 | 21]	[Info   ]	[Client-2       ]	[RPC-Channel ]	[Get-guid-Z-2]	Request Server-kv-2:42.KV.Get
+[T 221 | 21]	[Info   ]	[Client-2       ]	[Transport   ]	[Get-guid-Z-2]	Connecting to Server-kv-2:42: local port = 1
+[T 221 | 21]	[Info   ]	[Client-2       ]	[Network     ]	[Get-guid-Z-2]	Send packet to Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 2,
+        "trace_id": "Get-guid-Z-2",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "KV",
+            "name": "Get"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 264 | 22]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Client-2:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 2,
+        "trace_id": "Get-guid-Z-2",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "KV",
+            "name": "Get"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 264 | 24]	[Info   ]	[Server-kv-2 /T2]	[RPC-Server  ]	[Get-guid-Z-2]	Process KV.Get request from Client-2, id = 2
+[T 264 | 25]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Get-guid-Z-2]	Request Server-kv-1:42.Replica.LocalRead
+[T 264 | 25]	[Info   ]	[Server-kv-2    ]	[Transport   ]	[Get-guid-Z-2]	Connecting to Server-kv-1:42: local port = 1
+[T 264 | 25]	[Info   ]	[Server-kv-2    ]	[Network     ]	[Get-guid-Z-2]	Send packet to Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 3,
+        "trace_id": "Get-guid-Z-2",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 264 | 26]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Get-guid-Z-2]	Request Server-kv-2:42.Replica.LocalRead
+[T 264 | 26]	[Info   ]	[Server-kv-2    ]	[Transport   ]	[Get-guid-Z-2]	Connecting to Server-kv-2:42: local port = 2
+[T 264 | 26]	[Info   ]	[Server-kv-2    ]	[Network     ]	[Get-guid-Z-2]	Send packet to Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 4,
+        "trace_id": "Get-guid-Z-2",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 264 | 27]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Get-guid-Z-2]	Request Server-kv-3:42.Replica.LocalRead
+[T 264 | 27]	[Info   ]	[Server-kv-2    ]	[Transport   ]	[Get-guid-Z-2]	Connecting to Server-kv-3:42: local port = 3
+[T 264 | 27]	[Info   ]	[Server-kv-2    ]	[Network     ]	[Get-guid-Z-2]	Send packet to Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 5,
+        "trace_id": "Get-guid-Z-2",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 265 | 28]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-2:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 4,
+        "trace_id": "Get-guid-Z-2",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 265 | 30]	[Info   ]	[Server-kv-2 /T3]	[RPC-Server  ]	[Get-guid-Z-2]	Process Replica.LocalRead request from Server-kv-2, id = 4
+[T 265 | 30]	[Info   ]	[Server-kv-2 /T3]	[KVNode.Repli]	[Get-guid-Z-2]	galqiwi_log (128, 255, 128)
+[T 265 | 30]	[Info   ]	[Server-kv-2 /T3]	[Database    ]	[Get-guid-Z-2]	TryGet(kv:data:a)
+[T 265 | 30]	[Info   ]	[Server-kv-2 /T3]	[Network     ]	[Get-guid-Z-2]	Send packet to Server-kv-2:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 4,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 266 | 31]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 4,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 266 | 33]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Get-guid-Z-2]	Request Server-kv-2:42.Replica.LocalRead with id = 4 completed
+[T 270 | 37]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Client-3:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 1,
+        "trace_id": "Set-guid-X-1",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "KV",
+            "name": "Set"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": \"40\"\n    }\n}"
+    }
+}>
+[T 270 | 39]	[Info   ]	[Server-kv-2 /T4]	[RPC-Server  ]	[Set-guid-X-1]	Process KV.Set request from Client-3, id = 1
+[T 270 | 40]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Set-guid-X-1]	Request Server-kv-1:42.Replica.LocalRead
+[T 270 | 40]	[Info   ]	[Server-kv-2    ]	[Network     ]	[Set-guid-X-1]	Send packet to Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 6,
+        "trace_id": "Set-guid-X-1",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 270 | 41]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Set-guid-X-1]	Request Server-kv-2:42.Replica.LocalRead
+[T 270 | 41]	[Info   ]	[Server-kv-2    ]	[Network     ]	[Set-guid-X-1]	Send packet to Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 7,
+        "trace_id": "Set-guid-X-1",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 270 | 42]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Set-guid-X-1]	Request Server-kv-3:42.Replica.LocalRead
+[T 270 | 42]	[Info   ]	[Server-kv-2    ]	[Network     ]	[Set-guid-X-1]	Send packet to Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 8,
+        "trace_id": "Set-guid-X-1",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 271 | 43]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-2:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 7,
+        "trace_id": "Set-guid-X-1",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 271 | 45]	[Info   ]	[Server-kv-2 /T5]	[RPC-Server  ]	[Set-guid-X-1]	Process Replica.LocalRead request from Server-kv-2, id = 7
+[T 271 | 45]	[Info   ]	[Server-kv-2 /T5]	[KVNode.Repli]	[Set-guid-X-1]	galqiwi_log (128, 255, 128)
+[T 271 | 45]	[Info   ]	[Server-kv-2 /T5]	[Database    ]	[Set-guid-X-1]	TryGet(kv:data:a)
+[T 271 | 45]	[Info   ]	[Server-kv-2 /T5]	[Network     ]	[Set-guid-X-1]	Send packet to Server-kv-2:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 7,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 272 | 46]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 7,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 272 | 48]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Set-guid-X-1]	Request Server-kv-2:42.Replica.LocalRead with id = 7 completed
+[T 292 | 52]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-2:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 3,
+        "trace_id": "Get-guid-Z-2",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 292 | 54]	[Info   ]	[Server-kv-1 /T2]	[RPC-Server  ]	[Get-guid-Z-2]	Process Replica.LocalRead request from Server-kv-2, id = 3
+[T 292 | 54]	[Info   ]	[Server-kv-1 /T2]	[KVNode.Repli]	[Get-guid-Z-2]	galqiwi_log (128, 255, 128)
+[T 292 | 54]	[Info   ]	[Server-kv-1 /T2]	[Database    ]	[Get-guid-Z-2]	TryGet(kv:data:a)
+[T 292 | 54]	[Info   ]	[Server-kv-1 /T2]	[Network     ]	[Get-guid-Z-2]	Send packet to Server-kv-2:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 3,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 305 | 55]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-2:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 6,
+        "trace_id": "Set-guid-X-1",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 305 | 57]	[Info   ]	[Server-kv-1 /T3]	[RPC-Server  ]	[Set-guid-X-1]	Process Replica.LocalRead request from Server-kv-2, id = 6
+[T 305 | 57]	[Info   ]	[Server-kv-1 /T3]	[KVNode.Repli]	[Set-guid-X-1]	galqiwi_log (128, 255, 128)
+[T 305 | 57]	[Info   ]	[Server-kv-1 /T3]	[Database    ]	[Set-guid-X-1]	TryGet(kv:data:a)
+[T 305 | 57]	[Info   ]	[Server-kv-1 /T3]	[Network     ]	[Set-guid-X-1]	Send packet to Server-kv-2:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 6,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 313 | 58]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-2:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 8,
+        "trace_id": "Set-guid-X-1",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 313 | 60]	[Info   ]	[Server-kv-3 /T2]	[RPC-Server  ]	[Set-guid-X-1]	Process Replica.LocalRead request from Server-kv-2, id = 8
+[T 313 | 60]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-X-1]	galqiwi_log (128, 255, 128)
+[T 313 | 60]	[Info   ]	[Server-kv-3 /T2]	[Database    ]	[Set-guid-X-1]	TryGet(kv:data:a)
+[T 313 | 60]	[Info   ]	[Server-kv-3 /T2]	[Network     ]	[Set-guid-X-1]	Send packet to Server-kv-2:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 8,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 314 | 61]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-2:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 5,
+        "trace_id": "Get-guid-Z-2",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 314 | 63]	[Info   ]	[Server-kv-3 /T3]	[RPC-Server  ]	[Get-guid-Z-2]	Process Replica.LocalRead request from Server-kv-2, id = 5
+[T 314 | 63]	[Info   ]	[Server-kv-3 /T3]	[KVNode.Repli]	[Get-guid-Z-2]	galqiwi_log (128, 255, 128)
+[T 314 | 63]	[Info   ]	[Server-kv-3 /T3]	[Database    ]	[Get-guid-Z-2]	TryGet(kv:data:a)
+[T 314 | 63]	[Info   ]	[Server-kv-3 /T3]	[Network     ]	[Get-guid-Z-2]	Send packet to Server-kv-2:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 5,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 337 | 64]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 6,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 337 | 66]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Set-guid-X-1]	Request Server-kv-1:42.Replica.LocalRead with id = 6 completed
+[T 337 | 70]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Set-guid-X-1]	Request Server-kv-1:42.Replica.LocalWrite
+[T 337 | 70]	[Info   ]	[Server-kv-2    ]	[Network     ]	[Set-guid-X-1]	Send packet to Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 9,
+        "trace_id": "Set-guid-X-1",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 337 | 71]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Set-guid-X-1]	Request Server-kv-2:42.Replica.LocalWrite
+[T 337 | 71]	[Info   ]	[Server-kv-2    ]	[Network     ]	[Set-guid-X-1]	Send packet to Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 10,
+        "trace_id": "Set-guid-X-1",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 337 | 72]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Set-guid-X-1]	Request Server-kv-3:42.Replica.LocalWrite
+[T 337 | 72]	[Info   ]	[Server-kv-2    ]	[Network     ]	[Set-guid-X-1]	Send packet to Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 11,
+        "trace_id": "Set-guid-X-1",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 338 | 73]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-2:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 10,
+        "trace_id": "Set-guid-X-1",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 338 | 75]	[Info   ]	[Server-kv-2 /T6]	[RPC-Server  ]	[Set-guid-X-1]	Process Replica.LocalWrite request from Server-kv-2, id = 10
+[T 338 | 75]	[Info   ]	[Server-kv-2 /T6]	[Database    ]	[Set-guid-X-1]	TryGet(kv:data:a)
+[T 338 | 75]	[Info   ]	[Server-kv-2 /T6]	[KVNode.Repli]	[Set-guid-X-1]	galqiwi local_write got (nothing>40) with a
+[T 338 | 75]	[Info   ]	[Server-kv-2 /T6]	[KVNode.Repli]	[Set-guid-X-1]	galqiwi_log (255, 128, 128)
+[T 338 | 75]	[Info   ]	[Server-kv-2 /T6]	[KVNode.Repli]	[Set-guid-X-1]	Write 'a' -> {40, ts: 1/guid-Y-3}
+[T 338 | 75]	[Info   ]	[Server-kv-2 /T6]	[Database    ]	[Set-guid-X-1]	Put('kv:data:a', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "40",
+        "timestamp": {
+            "value": 1,
+            "timestamp_uid": "guid-Y-3"
+        }
+    }
+}>')
+[T 341 | 76]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 3,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 341 | 78]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Get-guid-Z-2]	Request Server-kv-1:42.Replica.LocalRead with id = 3 completed
+[T 341 | 81]	[Info   ]	[Server-kv-2 /T2]	[KVNode.Coord]	[Get-guid-Z-2]	galqiwi got output ()
+[T 341 | 82]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Get-guid-Z-2]	Request Server-kv-1:42.Replica.LocalWrite
+[T 341 | 82]	[Info   ]	[Server-kv-2    ]	[Network     ]	[Get-guid-Z-2]	Send packet to Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 12,
+        "trace_id": "Get-guid-Z-2",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"\",\n            \"timestamp\": {\n                \"value\": 0,\n                \"timestamp_uid\": \"\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 341 | 83]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Get-guid-Z-2]	Request Server-kv-2:42.Replica.LocalWrite
+[T 341 | 83]	[Info   ]	[Server-kv-2    ]	[Network     ]	[Get-guid-Z-2]	Send packet to Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 13,
+        "trace_id": "Get-guid-Z-2",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"\",\n            \"timestamp\": {\n                \"value\": 0,\n                \"timestamp_uid\": \"\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 341 | 84]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Get-guid-Z-2]	Request Server-kv-3:42.Replica.LocalWrite
+[T 341 | 84]	[Info   ]	[Server-kv-2    ]	[Network     ]	[Get-guid-Z-2]	Send packet to Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 14,
+        "trace_id": "Get-guid-Z-2",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"\",\n            \"timestamp\": {\n                \"value\": 0,\n                \"timestamp_uid\": \"\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 342 | 85]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-2:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 13,
+        "trace_id": "Get-guid-Z-2",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"\",\n            \"timestamp\": {\n                \"value\": 0,\n                \"timestamp_uid\": \"\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 342 | 87]	[Info   ]	[Server-kv-2 /T7]	[RPC-Server  ]	[Get-guid-Z-2]	Process Replica.LocalWrite request from Server-kv-2, id = 13
+[T 342 | 87]	[Info   ]	[Server-kv-2 /T7]	[Database    ]	[Get-guid-Z-2]	TryGet(kv:data:a)
+[T 342 | 87]	[Info   ]	[Server-kv-2 /T7]	[KVNode.Repli]	[Get-guid-Z-2]	galqiwi local_write got (nothing>) with a
+[T 342 | 87]	[Info   ]	[Server-kv-2 /T7]	[KVNode.Repli]	[Get-guid-Z-2]	galqiwi_log (255, 128, 128)
+[T 342 | 87]	[Info   ]	[Server-kv-2 /T7]	[KVNode.Repli]	[Get-guid-Z-2]	Write 'a' -> {, ts: 0/}
+[T 342 | 87]	[Info   ]	[Server-kv-2 /T7]	[Database    ]	[Get-guid-Z-2]	Put('kv:data:a', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "",
+        "timestamp": {
+            "value": 0,
+            "timestamp_uid": ""
+        }
+    }
+}>')
+[T 356 | 88]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 8,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 356 | 90]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Set-guid-X-1]	Request Server-kv-3:42.Replica.LocalRead with id = 8 completed
+[T 368 | 94]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 5,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 368 | 96]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Get-guid-Z-2]	Request Server-kv-3:42.Replica.LocalRead with id = 5 completed
+[T 375 | 100]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-2:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 11,
+        "trace_id": "Set-guid-X-1",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 375 | 102]	[Info   ]	[Server-kv-3 /T4]	[RPC-Server  ]	[Set-guid-X-1]	Process Replica.LocalWrite request from Server-kv-2, id = 11
+[T 375 | 102]	[Info   ]	[Server-kv-3 /T4]	[Database    ]	[Set-guid-X-1]	TryGet(kv:data:a)
+[T 375 | 102]	[Info   ]	[Server-kv-3 /T4]	[KVNode.Repli]	[Set-guid-X-1]	galqiwi local_write got (nothing>40) with a
+[T 375 | 102]	[Info   ]	[Server-kv-3 /T4]	[KVNode.Repli]	[Set-guid-X-1]	galqiwi_log (255, 128, 128)
+[T 375 | 102]	[Info   ]	[Server-kv-3 /T4]	[KVNode.Repli]	[Set-guid-X-1]	Write 'a' -> {40, ts: 1/guid-Y-3}
+[T 375 | 102]	[Info   ]	[Server-kv-3 /T4]	[Database    ]	[Set-guid-X-1]	Put('kv:data:a', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "40",
+        "timestamp": {
+            "value": 1,
+            "timestamp_uid": "guid-Y-3"
+        }
+    }
+}>')
+[T 380 | 103]	[Info   ]	[Server-kv-3 /T4]	[Database    ]	[Set-guid-X-1]	Put('kv:data:a', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "40",
+        "timestamp": {
+            "value": 1,
+            "timestamp_uid": "guid-Y-3"
+        }
+    }
+}>')
+[T 380 | 103]	[Info   ]	[Server-kv-3 /T4]	[Network     ]	[Set-guid-X-1]	Send packet to Server-kv-2:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 11,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 380 | 104]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-2:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 9,
+        "trace_id": "Set-guid-X-1",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 380 | 106]	[Info   ]	[Server-kv-1 /T4]	[RPC-Server  ]	[Set-guid-X-1]	Process Replica.LocalWrite request from Server-kv-2, id = 9
+[T 380 | 106]	[Info   ]	[Server-kv-1 /T4]	[Database    ]	[Set-guid-X-1]	TryGet(kv:data:a)
+[T 380 | 106]	[Info   ]	[Server-kv-1 /T4]	[KVNode.Repli]	[Set-guid-X-1]	galqiwi local_write got (nothing>40) with a
+[T 380 | 106]	[Info   ]	[Server-kv-1 /T4]	[KVNode.Repli]	[Set-guid-X-1]	galqiwi_log (255, 128, 128)
+[T 380 | 106]	[Info   ]	[Server-kv-1 /T4]	[KVNode.Repli]	[Set-guid-X-1]	Write 'a' -> {40, ts: 1/guid-Y-3}
+[T 380 | 106]	[Info   ]	[Server-kv-1 /T4]	[Database    ]	[Set-guid-X-1]	Put('kv:data:a', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "40",
+        "timestamp": {
+            "value": 1,
+            "timestamp_uid": "guid-Y-3"
+        }
+    }
+}>')
+[T 380 | 107]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-2:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 12,
+        "trace_id": "Get-guid-Z-2",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"\",\n            \"timestamp\": {\n                \"value\": 0,\n                \"timestamp_uid\": \"\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 380 | 109]	[Info   ]	[Server-kv-1 /T5]	[RPC-Server  ]	[Get-guid-Z-2]	Process Replica.LocalWrite request from Server-kv-2, id = 12
+[T 380 | 109]	[Info   ]	[Server-kv-1 /T5]	[Database    ]	[Get-guid-Z-2]	TryGet(kv:data:a)
+[T 380 | 109]	[Info   ]	[Server-kv-1 /T5]	[KVNode.Repli]	[Get-guid-Z-2]	galqiwi local_write got (nothing>) with a
+[T 380 | 109]	[Info   ]	[Server-kv-1 /T5]	[KVNode.Repli]	[Get-guid-Z-2]	galqiwi_log (255, 128, 128)
+[T 380 | 109]	[Info   ]	[Server-kv-1 /T5]	[KVNode.Repli]	[Get-guid-Z-2]	Write 'a' -> {, ts: 0/}
+[T 380 | 109]	[Info   ]	[Server-kv-1 /T5]	[Database    ]	[Get-guid-Z-2]	Put('kv:data:a', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "",
+        "timestamp": {
+            "value": 0,
+            "timestamp_uid": ""
+        }
+    }
+}>')
+[T 390 | 110]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-2:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 14,
+        "trace_id": "Get-guid-Z-2",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"\",\n            \"timestamp\": {\n                \"value\": 0,\n                \"timestamp_uid\": \"\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 390 | 112]	[Info   ]	[Server-kv-3 /T5]	[RPC-Server  ]	[Get-guid-Z-2]	Process Replica.LocalWrite request from Server-kv-2, id = 14
+[T 390 | 112]	[Info   ]	[Server-kv-3 /T5]	[Database    ]	[Get-guid-Z-2]	TryGet(kv:data:a)
+[T 390 | 112]	[Info   ]	[Server-kv-3 /T5]	[KVNode.Repli]	[Get-guid-Z-2]	galqiwi_log (255, 255, 128)
+[T 390 | 112]	[Info   ]	[Server-kv-3 /T5]	[Network     ]	[Get-guid-Z-2]	Send packet to Server-kv-2:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 14,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 429 | 114]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 11,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 429 | 116]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Set-guid-X-1]	Request Server-kv-3:42.Replica.LocalWrite with id = 11 completed
+[T 436 | 120]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 14,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 436 | 122]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Get-guid-Z-2]	Request Server-kv-3:42.Replica.LocalWrite with id = 14 completed
+[T 464 | 126]	[Info   ]	[Server-kv-2 /T6]	[Database    ]	[Set-guid-X-1]	Put('kv:data:a', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "40",
+        "timestamp": {
+            "value": 1,
+            "timestamp_uid": "guid-Y-3"
+        }
+    }
+}>')
+[T 464 | 126]	[Info   ]	[Server-kv-2 /T6]	[Network     ]	[Set-guid-X-1]	Send packet to Server-kv-2:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 10,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 465 | 127]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 10,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 465 | 129]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Set-guid-X-1]	Request Server-kv-2:42.Replica.LocalWrite with id = 10 completed
+[T 465 | 132]	[Info   ]	[Server-kv-2 /T4]	[Network     ]	[Set-guid-X-1]	Send packet to Client-3:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 1,
+        "method": {
+            "service": "KV",
+            "name": "Set"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 497 | 133]	[Info   ]	[Server-kv-1 /T4]	[Database    ]	[Set-guid-X-1]	Put('kv:data:a', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "40",
+        "timestamp": {
+            "value": 1,
+            "timestamp_uid": "guid-Y-3"
+        }
+    }
+}>')
+[T 497 | 133]	[Info   ]	[Server-kv-1 /T4]	[Network     ]	[Set-guid-X-1]	Send packet to Server-kv-2:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 9,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 519 | 134]	[Info   ]	[Client-3       ]	[Transport   ]	Handle message from Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 1,
+        "method": {
+            "service": "KV",
+            "name": "Set"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 519 | 136]	[Info   ]	[Client-3       ]	[RPC-Channel ]	[Set-guid-X-1]	Request Server-kv-2:42.KV.Set with id = 1 completed
+[T 519 | 140]	[Info   ]	[Client-3 /main ]	[Client      ]	Set completed
+[T 549 | 141]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 9,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 549 | 143]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Set-guid-X-1]	Request Server-kv-1:42.Replica.LocalWrite with id = 9 completed
+[T 557 | 147]	[Info   ]	[Client-3 /main ]	[Client      ]	Execute Get(a)
+[T 557 | 148]	[Info   ]	[Client-3       ]	[RPC-Channel ]	[Get-guid-X-4]	Request Server-kv-3:42.KV.Get
+[T 557 | 148]	[Info   ]	[Client-3       ]	[Transport   ]	[Get-guid-X-4]	Connecting to Server-kv-3:42: local port = 2
+[T 557 | 148]	[Info   ]	[Client-3       ]	[Network     ]	[Get-guid-X-4]	Send packet to Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 15,
+        "trace_id": "Get-guid-X-4",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "KV",
+            "name": "Get"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 559 | 149]	[Info   ]	[Server-kv-1 /T5]	[Database    ]	[Get-guid-Z-2]	Put('kv:data:a', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "",
+        "timestamp": {
+            "value": 0,
+            "timestamp_uid": ""
+        }
+    }
+}>')
+[T 559 | 149]	[Info   ]	[Server-kv-1 /T5]	[Network     ]	[Get-guid-Z-2]	Send packet to Server-kv-2:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 12,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 583 | 150]	[Info   ]	[Server-kv-2 /T7]	[Database    ]	[Get-guid-Z-2]	Put('kv:data:a', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "",
+        "timestamp": {
+            "value": 0,
+            "timestamp_uid": ""
+        }
+    }
+}>')
+[T 583 | 150]	[Info   ]	[Server-kv-2 /T7]	[Network     ]	[Get-guid-Z-2]	Send packet to Server-kv-2:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 13,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 584 | 151]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 13,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 584 | 153]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Get-guid-Z-2]	Request Server-kv-2:42.Replica.LocalWrite with id = 13 completed
+[T 584 | 156]	[Info   ]	[Server-kv-2 /T2]	[KVNode.Coord]	[Get-guid-Z-2]	galqiwi returned output ()
+[T 584 | 156]	[Info   ]	[Server-kv-2 /T2]	[Network     ]	[Get-guid-Z-2]	Send packet to Client-2:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 2,
+        "method": {
+            "service": "KV",
+            "name": "Get"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::string\"\n    },\n    \"object\": \"\"\n}",
+        "error": 0
+    }
+}>
+[T 603 | 157]	[Info   ]	[Client-1 /main ]	[Client      ]	Execute Get(a)
+[T 603 | 158]	[Info   ]	[Client-1       ]	[RPC-Channel ]	[Get-guid-Z-5]	Request Server-kv-1:42.KV.Get
+[T 603 | 158]	[Info   ]	[Client-1       ]	[Transport   ]	[Get-guid-Z-5]	Connecting to Server-kv-1:42: local port = 1
+[T 603 | 158]	[Info   ]	[Client-1       ]	[Network     ]	[Get-guid-Z-5]	Send packet to Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 16,
+        "trace_id": "Get-guid-Z-5",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "KV",
+            "name": "Get"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 609 | 159]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 12,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 609 | 161]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Get-guid-Z-2]	Request Server-kv-1:42.Replica.LocalWrite with id = 12 completed
+[T 615 | 165]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Client-3:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 15,
+        "trace_id": "Get-guid-X-4",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "KV",
+            "name": "Get"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 615 | 167]	[Info   ]	[Server-kv-3 /T6]	[RPC-Server  ]	[Get-guid-X-4]	Process KV.Get request from Client-3, id = 15
+[T 615 | 168]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-X-4]	Request Server-kv-1:42.Replica.LocalRead
+[T 615 | 168]	[Info   ]	[Server-kv-3    ]	[Transport   ]	[Get-guid-X-4]	Connecting to Server-kv-1:42: local port = 1
+[T 615 | 168]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Get-guid-X-4]	Send packet to Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 17,
+        "trace_id": "Get-guid-X-4",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 615 | 169]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-X-4]	Request Server-kv-2:42.Replica.LocalRead
+[T 615 | 169]	[Info   ]	[Server-kv-3    ]	[Transport   ]	[Get-guid-X-4]	Connecting to Server-kv-2:42: local port = 2
+[T 615 | 169]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Get-guid-X-4]	Send packet to Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 18,
+        "trace_id": "Get-guid-X-4",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 615 | 170]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-X-4]	Request Server-kv-3:42.Replica.LocalRead
+[T 615 | 170]	[Info   ]	[Server-kv-3    ]	[Transport   ]	[Get-guid-X-4]	Connecting to Server-kv-3:42: local port = 3
+[T 615 | 170]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Get-guid-X-4]	Send packet to Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 19,
+        "trace_id": "Get-guid-X-4",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 616 | 171]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-3:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 19,
+        "trace_id": "Get-guid-X-4",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 616 | 173]	[Info   ]	[Server-kv-3 /T7]	[RPC-Server  ]	[Get-guid-X-4]	Process Replica.LocalRead request from Server-kv-3, id = 19
+[T 616 | 173]	[Info   ]	[Server-kv-3 /T7]	[KVNode.Repli]	[Get-guid-X-4]	galqiwi_log (128, 255, 128)
+[T 616 | 173]	[Info   ]	[Server-kv-3 /T7]	[Database    ]	[Get-guid-X-4]	TryGet(kv:data:a)
+[T 616 | 173]	[Info   ]	[Server-kv-3 /T7]	[Network     ]	[Get-guid-X-4]	Send packet to Server-kv-3:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 19,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"40\",\n        \"timestamp\": {\n            \"value\": 1,\n            \"timestamp_uid\": \"guid-Y-3\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 617 | 174]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 19,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"40\",\n        \"timestamp\": {\n            \"value\": 1,\n            \"timestamp_uid\": \"guid-Y-3\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 617 | 176]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-X-4]	Request Server-kv-3:42.Replica.LocalRead with id = 19 completed
+[T 619 | 180]	[Info   ]	[Client-2       ]	[Transport   ]	Handle message from Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 2,
+        "method": {
+            "service": "KV",
+            "name": "Get"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::string\"\n    },\n    \"object\": \"\"\n}",
+        "error": 0
+    }
+}>
+[T 619 | 182]	[Info   ]	[Client-2       ]	[RPC-Channel ]	[Get-guid-Z-2]	Request Server-kv-2:42.KV.Get with id = 2 completed
+[T 619 | 186]	[Info   ]	[Client-2 /main ]	[Client      ]	Get(a) -> 
+[T 655 | 187]	[Info   ]	[Client-2 /main ]	[Client      ]	Execute Get(a)
+[T 655 | 188]	[Info   ]	[Client-2       ]	[RPC-Channel ]	[Get-guid-Y-6]	Request Server-kv-3:42.KV.Get
+[T 655 | 188]	[Info   ]	[Client-2       ]	[Transport   ]	[Get-guid-Y-6]	Connecting to Server-kv-3:42: local port = 2
+[T 655 | 188]	[Info   ]	[Client-2       ]	[Network     ]	[Get-guid-Y-6]	Send packet to Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 20,
+        "trace_id": "Get-guid-Y-6",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "KV",
+            "name": "Get"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 673 | 189]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-3:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 17,
+        "trace_id": "Get-guid-X-4",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 673 | 191]	[Info   ]	[Server-kv-1 /T6]	[RPC-Server  ]	[Get-guid-X-4]	Process Replica.LocalRead request from Server-kv-3, id = 17
+[T 673 | 191]	[Info   ]	[Server-kv-1 /T6]	[KVNode.Repli]	[Get-guid-X-4]	galqiwi_log (128, 255, 128)
+[T 673 | 191]	[Info   ]	[Server-kv-1 /T6]	[Database    ]	[Get-guid-X-4]	TryGet(kv:data:a)
+[T 673 | 191]	[Info   ]	[Server-kv-1 /T6]	[Network     ]	[Get-guid-X-4]	Send packet to Server-kv-3:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 17,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 687 | 192]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Client-1:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 16,
+        "trace_id": "Get-guid-Z-5",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "KV",
+            "name": "Get"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 687 | 194]	[Info   ]	[Server-kv-1 /T7]	[RPC-Server  ]	[Get-guid-Z-5]	Process KV.Get request from Client-1, id = 16
+[T 687 | 195]	[Info   ]	[Server-kv-1    ]	[RPC-Channel ]	[Get-guid-Z-5]	Request Server-kv-1:42.Replica.LocalRead
+[T 687 | 195]	[Info   ]	[Server-kv-1    ]	[Transport   ]	[Get-guid-Z-5]	Connecting to Server-kv-1:42: local port = 1
+[T 687 | 195]	[Info   ]	[Server-kv-1    ]	[Network     ]	[Get-guid-Z-5]	Send packet to Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 21,
+        "trace_id": "Get-guid-Z-5",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 687 | 196]	[Info   ]	[Server-kv-1    ]	[RPC-Channel ]	[Get-guid-Z-5]	Request Server-kv-2:42.Replica.LocalRead
+[T 687 | 196]	[Info   ]	[Server-kv-1    ]	[Transport   ]	[Get-guid-Z-5]	Connecting to Server-kv-2:42: local port = 2
+[T 687 | 196]	[Info   ]	[Server-kv-1    ]	[Network     ]	[Get-guid-Z-5]	Send packet to Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 22,
+        "trace_id": "Get-guid-Z-5",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 687 | 197]	[Info   ]	[Server-kv-1    ]	[RPC-Channel ]	[Get-guid-Z-5]	Request Server-kv-3:42.Replica.LocalRead
+[T 687 | 197]	[Info   ]	[Server-kv-1    ]	[Transport   ]	[Get-guid-Z-5]	Connecting to Server-kv-3:42: local port = 3
+[T 687 | 197]	[Info   ]	[Server-kv-1    ]	[Network     ]	[Get-guid-Z-5]	Send packet to Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 23,
+        "trace_id": "Get-guid-Z-5",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 688 | 198]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-1:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 21,
+        "trace_id": "Get-guid-Z-5",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 688 | 200]	[Info   ]	[Server-kv-1 /T8]	[RPC-Server  ]	[Get-guid-Z-5]	Process Replica.LocalRead request from Server-kv-1, id = 21
+[T 688 | 200]	[Info   ]	[Server-kv-1 /T8]	[KVNode.Repli]	[Get-guid-Z-5]	galqiwi_log (128, 255, 128)
+[T 688 | 200]	[Info   ]	[Server-kv-1 /T8]	[Database    ]	[Get-guid-Z-5]	TryGet(kv:data:a)
+[T 688 | 200]	[Info   ]	[Server-kv-1 /T8]	[Network     ]	[Get-guid-Z-5]	Send packet to Server-kv-1:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 21,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 689 | 201]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 21,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 689 | 203]	[Info   ]	[Server-kv-1    ]	[RPC-Channel ]	[Get-guid-Z-5]	Request Server-kv-1:42.Replica.LocalRead with id = 21 completed
+[T 697 | 207]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Client-2:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 20,
+        "trace_id": "Get-guid-Y-6",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "KV",
+            "name": "Get"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 697 | 209]	[Info   ]	[Server-kv-3 /T8]	[RPC-Server  ]	[Get-guid-Y-6]	Process KV.Get request from Client-2, id = 20
+[T 697 | 210]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-Y-6]	Request Server-kv-1:42.Replica.LocalRead
+[T 697 | 210]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Get-guid-Y-6]	Send packet to Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 24,
+        "trace_id": "Get-guid-Y-6",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 697 | 211]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-Y-6]	Request Server-kv-2:42.Replica.LocalRead
+[T 697 | 211]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Get-guid-Y-6]	Send packet to Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 25,
+        "trace_id": "Get-guid-Y-6",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 697 | 212]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-Y-6]	Request Server-kv-3:42.Replica.LocalRead
+[T 697 | 212]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Get-guid-Y-6]	Send packet to Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 26,
+        "trace_id": "Get-guid-Y-6",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 698 | 213]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-3:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 26,
+        "trace_id": "Get-guid-Y-6",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 698 | 215]	[Info   ]	[Server-kv-3 /T9]	[RPC-Server  ]	[Get-guid-Y-6]	Process Replica.LocalRead request from Server-kv-3, id = 26
+[T 698 | 215]	[Info   ]	[Server-kv-3 /T9]	[KVNode.Repli]	[Get-guid-Y-6]	galqiwi_log (128, 255, 128)
+[T 698 | 215]	[Info   ]	[Server-kv-3 /T9]	[Database    ]	[Get-guid-Y-6]	TryGet(kv:data:a)
+[T 698 | 215]	[Info   ]	[Server-kv-3 /T9]	[Network     ]	[Get-guid-Y-6]	Send packet to Server-kv-3:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 26,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"40\",\n        \"timestamp\": {\n            \"value\": 1,\n            \"timestamp_uid\": \"guid-Y-3\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 699 | 216]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 26,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"40\",\n        \"timestamp\": {\n            \"value\": 1,\n            \"timestamp_uid\": \"guid-Y-3\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 699 | 218]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-Y-6]	Request Server-kv-3:42.Replica.LocalRead with id = 26 completed
+[T 719 | 222]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-1:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 22,
+        "trace_id": "Get-guid-Z-5",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 719 | 224]	[Info   ]	[Server-kv-2 /T8]	[RPC-Server  ]	[Get-guid-Z-5]	Process Replica.LocalRead request from Server-kv-1, id = 22
+[T 719 | 224]	[Info   ]	[Server-kv-2 /T8]	[KVNode.Repli]	[Get-guid-Z-5]	galqiwi_log (128, 255, 128)
+[T 719 | 224]	[Info   ]	[Server-kv-2 /T8]	[Database    ]	[Get-guid-Z-5]	TryGet(kv:data:a)
+[T 719 | 224]	[Info   ]	[Server-kv-2 /T8]	[Network     ]	[Get-guid-Z-5]	Send packet to Server-kv-1:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 22,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 732 | 225]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-3:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 25,
+        "trace_id": "Get-guid-Y-6",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 732 | 227]	[Info   ]	[Server-kv-2 /T9]	[RPC-Server  ]	[Get-guid-Y-6]	Process Replica.LocalRead request from Server-kv-3, id = 25
+[T 732 | 227]	[Info   ]	[Server-kv-2 /T9]	[KVNode.Repli]	[Get-guid-Y-6]	galqiwi_log (128, 255, 128)
+[T 732 | 227]	[Info   ]	[Server-kv-2 /T9]	[Database    ]	[Get-guid-Y-6]	TryGet(kv:data:a)
+[T 732 | 227]	[Info   ]	[Server-kv-2 /T9]	[Network     ]	[Get-guid-Y-6]	Send packet to Server-kv-3:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 25,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 735 | 228]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-1:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 23,
+        "trace_id": "Get-guid-Z-5",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 735 | 230]	[Info   ]	[Server-kv-3 /T1]	[RPC-Server  ]	[Get-guid-Z-5]	Process Replica.LocalRead request from Server-kv-1, id = 23
+[T 735 | 230]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Get-guid-Z-5]	galqiwi_log (128, 255, 128)
+[T 735 | 230]	[Info   ]	[Server-kv-3 /T1]	[Database    ]	[Get-guid-Z-5]	TryGet(kv:data:a)
+[T 735 | 230]	[Info   ]	[Server-kv-3 /T1]	[Network     ]	[Get-guid-Z-5]	Send packet to Server-kv-1:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 23,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"40\",\n        \"timestamp\": {\n            \"value\": 1,\n            \"timestamp_uid\": \"guid-Y-3\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 753 | 231]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-3:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 24,
+        "trace_id": "Get-guid-Y-6",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 753 | 233]	[Info   ]	[Server-kv-1 /T9]	[RPC-Server  ]	[Get-guid-Y-6]	Process Replica.LocalRead request from Server-kv-3, id = 24
+[T 753 | 233]	[Info   ]	[Server-kv-1 /T9]	[KVNode.Repli]	[Get-guid-Y-6]	galqiwi_log (128, 255, 128)
+[T 753 | 233]	[Info   ]	[Server-kv-1 /T9]	[Database    ]	[Get-guid-Y-6]	TryGet(kv:data:a)
+[T 753 | 233]	[Info   ]	[Server-kv-1 /T9]	[Network     ]	[Get-guid-Y-6]	Send packet to Server-kv-3:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 24,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 772 | 234]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 22,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 772 | 236]	[Info   ]	[Server-kv-1    ]	[RPC-Channel ]	[Get-guid-Z-5]	Request Server-kv-2:42.Replica.LocalRead with id = 22 completed
+[T 772 | 239]	[Info   ]	[Server-kv-1 /T7]	[KVNode.Coord]	[Get-guid-Z-5]	galqiwi got output ()
+[T 772 | 240]	[Info   ]	[Server-kv-1    ]	[RPC-Channel ]	[Get-guid-Z-5]	Request Server-kv-1:42.Replica.LocalWrite
+[T 772 | 240]	[Info   ]	[Server-kv-1    ]	[Network     ]	[Get-guid-Z-5]	Send packet to Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 27,
+        "trace_id": "Get-guid-Z-5",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"\",\n            \"timestamp\": {\n                \"value\": 0,\n                \"timestamp_uid\": \"\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 772 | 241]	[Info   ]	[Server-kv-1    ]	[RPC-Channel ]	[Get-guid-Z-5]	Request Server-kv-2:42.Replica.LocalWrite
+[T 772 | 241]	[Info   ]	[Server-kv-1    ]	[Network     ]	[Get-guid-Z-5]	Send packet to Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 28,
+        "trace_id": "Get-guid-Z-5",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"\",\n            \"timestamp\": {\n                \"value\": 0,\n                \"timestamp_uid\": \"\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 772 | 242]	[Info   ]	[Server-kv-1    ]	[RPC-Channel ]	[Get-guid-Z-5]	Request Server-kv-3:42.Replica.LocalWrite
+[T 772 | 242]	[Info   ]	[Server-kv-1    ]	[Network     ]	[Get-guid-Z-5]	Send packet to Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 29,
+        "trace_id": "Get-guid-Z-5",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"\",\n            \"timestamp\": {\n                \"value\": 0,\n                \"timestamp_uid\": \"\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 773 | 243]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-1:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 27,
+        "trace_id": "Get-guid-Z-5",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"\",\n            \"timestamp\": {\n                \"value\": 0,\n                \"timestamp_uid\": \"\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 773 | 245]	[Info   ]	[Server-kv-1 /T1]	[RPC-Server  ]	[Get-guid-Z-5]	Process Replica.LocalWrite request from Server-kv-1, id = 27
+[T 773 | 245]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Get-guid-Z-5]	TryGet(kv:data:a)
+[T 773 | 245]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Get-guid-Z-5]	galqiwi_log (255, 255, 128)
+[T 773 | 245]	[Info   ]	[Server-kv-1 /T1]	[Network     ]	[Get-guid-Z-5]	Send packet to Server-kv-1:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 27,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 774 | 246]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 27,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 774 | 248]	[Info   ]	[Server-kv-1    ]	[RPC-Channel ]	[Get-guid-Z-5]	Request Server-kv-1:42.Replica.LocalWrite with id = 27 completed
+[T 791 | 252]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 25,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 791 | 254]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-Y-6]	Request Server-kv-2:42.Replica.LocalRead with id = 25 completed
+[T 791 | 257]	[Info   ]	[Server-kv-3 /T8]	[KVNode.Coord]	[Get-guid-Y-6]	galqiwi got output (40)
+[T 791 | 258]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-Y-6]	Request Server-kv-1:42.Replica.LocalWrite
+[T 791 | 258]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Get-guid-Y-6]	Send packet to Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 30,
+        "trace_id": "Get-guid-Y-6",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 791 | 259]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-Y-6]	Request Server-kv-2:42.Replica.LocalWrite
+[T 791 | 259]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Get-guid-Y-6]	Send packet to Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 31,
+        "trace_id": "Get-guid-Y-6",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 791 | 260]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-Y-6]	Request Server-kv-3:42.Replica.LocalWrite
+[T 791 | 260]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Get-guid-Y-6]	Send packet to Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 32,
+        "trace_id": "Get-guid-Y-6",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 792 | 261]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-3:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 32,
+        "trace_id": "Get-guid-Y-6",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 792 | 263]	[Info   ]	[Server-kv-3 /T1]	[RPC-Server  ]	[Get-guid-Y-6]	Process Replica.LocalWrite request from Server-kv-3, id = 32
+[T 792 | 263]	[Info   ]	[Server-kv-3 /T1]	[Database    ]	[Get-guid-Y-6]	TryGet(kv:data:a)
+[T 792 | 263]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Get-guid-Y-6]	galqiwi_log (255, 255, 128)
+[T 792 | 263]	[Info   ]	[Server-kv-3 /T1]	[Network     ]	[Get-guid-Y-6]	Send packet to Server-kv-3:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 32,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 793 | 264]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 32,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 793 | 266]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-Y-6]	Request Server-kv-3:42.Replica.LocalWrite with id = 32 completed
+[T 794 | 270]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 23,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"40\",\n        \"timestamp\": {\n            \"value\": 1,\n            \"timestamp_uid\": \"guid-Y-3\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 794 | 272]	[Info   ]	[Server-kv-1    ]	[RPC-Channel ]	[Get-guid-Z-5]	Request Server-kv-3:42.Replica.LocalRead with id = 23 completed
+[T 811 | 276]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-1:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 29,
+        "trace_id": "Get-guid-Z-5",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"\",\n            \"timestamp\": {\n                \"value\": 0,\n                \"timestamp_uid\": \"\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 811 | 278]	[Info   ]	[Server-kv-3 /T1]	[RPC-Server  ]	[Get-guid-Z-5]	Process Replica.LocalWrite request from Server-kv-1, id = 29
+[T 811 | 278]	[Info   ]	[Server-kv-3 /T1]	[Database    ]	[Get-guid-Z-5]	TryGet(kv:data:a)
+[T 811 | 278]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Get-guid-Z-5]	galqiwi_log (255, 255, 128)
+[T 811 | 278]	[Info   ]	[Server-kv-3 /T1]	[Network     ]	[Get-guid-Z-5]	Send packet to Server-kv-1:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 29,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 826 | 279]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-1:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 28,
+        "trace_id": "Get-guid-Z-5",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"\",\n            \"timestamp\": {\n                \"value\": 0,\n                \"timestamp_uid\": \"\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 826 | 281]	[Info   ]	[Server-kv-2 /T1]	[RPC-Server  ]	[Get-guid-Z-5]	Process Replica.LocalWrite request from Server-kv-1, id = 28
+[T 826 | 281]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Get-guid-Z-5]	TryGet(kv:data:a)
+[T 826 | 281]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Get-guid-Z-5]	galqiwi_log (255, 255, 128)
+[T 826 | 281]	[Info   ]	[Server-kv-2 /T1]	[Network     ]	[Get-guid-Z-5]	Send packet to Server-kv-1:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 28,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 833 | 282]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-3:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 31,
+        "trace_id": "Get-guid-Y-6",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 833 | 284]	[Info   ]	[Server-kv-2 /T1]	[RPC-Server  ]	[Get-guid-Y-6]	Process Replica.LocalWrite request from Server-kv-3, id = 31
+[T 833 | 284]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Get-guid-Y-6]	TryGet(kv:data:a)
+[T 833 | 284]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Get-guid-Y-6]	galqiwi_log (255, 128, 128)
+[T 833 | 284]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Get-guid-Y-6]	galqiwi local_write got (>40) with a
+[T 833 | 284]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Get-guid-Y-6]	Write 'a' -> {40, ts: 1/guid-Y-3}
+[T 833 | 284]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Get-guid-Y-6]	Put('kv:data:a', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "40",
+        "timestamp": {
+            "value": 1,
+            "timestamp_uid": "guid-Y-3"
+        }
+    }
+}>')
+[T 841 | 285]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 29,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 841 | 287]	[Info   ]	[Server-kv-1    ]	[RPC-Channel ]	[Get-guid-Z-5]	Request Server-kv-3:42.Replica.LocalWrite with id = 29 completed
+[T 841 | 290]	[Info   ]	[Server-kv-1 /T7]	[KVNode.Coord]	[Get-guid-Z-5]	galqiwi returned output ()
+[T 841 | 290]	[Info   ]	[Server-kv-1 /T7]	[Network     ]	[Get-guid-Z-5]	Send packet to Client-1:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 16,
+        "method": {
+            "service": "KV",
+            "name": "Get"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::string\"\n    },\n    \"object\": \"\"\n}",
+        "error": 0
+    }
+}>
+[T 845 | 291]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Get-guid-Y-6]	Put('kv:data:a', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "40",
+        "timestamp": {
+            "value": 1,
+            "timestamp_uid": "guid-Y-3"
+        }
+    }
+}>')
+[T 845 | 291]	[Info   ]	[Server-kv-2 /T1]	[Network     ]	[Get-guid-Y-6]	Send packet to Server-kv-3:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 31,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 879 | 292]	[Info   ]	[Client-1       ]	[Transport   ]	Handle message from Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 16,
+        "method": {
+            "service": "KV",
+            "name": "Get"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::string\"\n    },\n    \"object\": \"\"\n}",
+        "error": 0
+    }
+}>
+[T 879 | 294]	[Info   ]	[Client-1       ]	[RPC-Channel ]	[Get-guid-Z-5]	Request Server-kv-1:42.KV.Get with id = 16 completed
+[T 879 | 298]	[Info   ]	[Client-1 /main ]	[Client      ]	Get(a) -> 
+[T 882 | 299]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 31,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 882 | 301]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-Y-6]	Request Server-kv-2:42.Replica.LocalWrite with id = 31 completed
+[T 882 | 304]	[Info   ]	[Server-kv-3 /T8]	[KVNode.Coord]	[Get-guid-Y-6]	galqiwi returned output (40)
+[T 882 | 304]	[Info   ]	[Server-kv-3 /T8]	[Network     ]	[Get-guid-Y-6]	Send packet to Client-2:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 20,
+        "method": {
+            "service": "KV",
+            "name": "Get"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::string\"\n    },\n    \"object\": \"40\"\n}",
+        "error": 0
+    }
+}>
+[T 916 | 305]	[Info   ]	[Client-2       ]	[Transport   ]	Handle message from Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 20,
+        "method": {
+            "service": "KV",
+            "name": "Get"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::string\"\n    },\n    \"object\": \"40\"\n}",
+        "error": 0
+    }
+}>
+[T 916 | 307]	[Info   ]	[Client-2       ]	[RPC-Channel ]	[Get-guid-Y-6]	Request Server-kv-3:42.KV.Get with id = 20 completed
+[T 916 | 311]	[Info   ]	[Client-2 /main ]	[Client      ]	Get(a) -> 40
+[T 953 | 312]	[Info   ]	[Client-2 /main ]	[Client      ]	Execute Get(a)
+[T 953 | 313]	[Info   ]	[Client-2       ]	[RPC-Channel ]	[Get-guid-X-7]	Request Server-kv-1:42.KV.Get
+[T 953 | 313]	[Info   ]	[Client-2       ]	[Transport   ]	[Get-guid-X-7]	Connecting to Server-kv-1:42: local port = 3
+[T 953 | 313]	[Info   ]	[Client-2       ]	[Network     ]	[Get-guid-X-7]	Send packet to Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 33,
+        "trace_id": "Get-guid-X-7",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "KV",
+            "name": "Get"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 954 | 314]	[Info   ]	[Client-1 /main ]	[Client      ]	Execute Set(b, 73)
+[T 954 | 315]	[Info   ]	[Client-1       ]	[RPC-Channel ]	[Set-guid-Z-8]	Request Server-kv-3:42.KV.Set
+[T 954 | 315]	[Info   ]	[Client-1       ]	[Transport   ]	[Set-guid-Z-8]	Connecting to Server-kv-3:42: local port = 2
+[T 954 | 315]	[Info   ]	[Client-1       ]	[Network     ]	[Set-guid-Z-8]	Send packet to Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 34,
+        "trace_id": "Set-guid-Z-8",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "KV",
+            "name": "Set"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"b\",\n        \"tuple_element1\": \"73\"\n    }\n}"
+    }
+}>
+[T 1009 | 316]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Client-1:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 34,
+        "trace_id": "Set-guid-Z-8",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "KV",
+            "name": "Set"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"b\",\n        \"tuple_element1\": \"73\"\n    }\n}"
+    }
+}>
+[T 1009 | 318]	[Info   ]	[Server-kv-3 /T1]	[RPC-Server  ]	[Set-guid-Z-8]	Process KV.Set request from Client-1, id = 34
+[T 1009 | 319]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-Z-8]	Request Server-kv-1:42.Replica.LocalRead
+[T 1009 | 319]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Set-guid-Z-8]	Send packet to Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 35,
+        "trace_id": "Set-guid-Z-8",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"b\"\n    }\n}"
+    }
+}>
+[T 1009 | 320]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-Z-8]	Request Server-kv-2:42.Replica.LocalRead
+[T 1009 | 320]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Set-guid-Z-8]	Send packet to Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 36,
+        "trace_id": "Set-guid-Z-8",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"b\"\n    }\n}"
+    }
+}>
+[T 1009 | 321]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-Z-8]	Request Server-kv-3:42.Replica.LocalRead
+[T 1009 | 321]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Set-guid-Z-8]	Send packet to Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 37,
+        "trace_id": "Set-guid-Z-8",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"b\"\n    }\n}"
+    }
+}>
+[T 1010 | 322]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-3:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 37,
+        "trace_id": "Set-guid-Z-8",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"b\"\n    }\n}"
+    }
+}>
+[T 1010 | 324]	[Info   ]	[Server-kv-3 /T1]	[RPC-Server  ]	[Set-guid-Z-8]	Process Replica.LocalRead request from Server-kv-3, id = 37
+[T 1010 | 324]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	galqiwi_log (128, 255, 128)
+[T 1010 | 324]	[Info   ]	[Server-kv-3 /T1]	[Database    ]	[Set-guid-Z-8]	TryGet(kv:data:b)
+[T 1010 | 324]	[Info   ]	[Server-kv-3 /T1]	[Network     ]	[Set-guid-Z-8]	Send packet to Server-kv-3:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 37,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1011 | 325]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 37,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1011 | 327]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-Z-8]	Request Server-kv-3:42.Replica.LocalRead with id = 37 completed
+[T 1022 | 331]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-3:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 30,
+        "trace_id": "Get-guid-Y-6",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1022 | 333]	[Info   ]	[Server-kv-1 /T1]	[RPC-Server  ]	[Get-guid-Y-6]	Process Replica.LocalWrite request from Server-kv-3, id = 30
+[T 1022 | 333]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Get-guid-Y-6]	TryGet(kv:data:a)
+[T 1022 | 333]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Get-guid-Y-6]	galqiwi_log (255, 128, 128)
+[T 1022 | 333]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Get-guid-Y-6]	galqiwi local_write got (>40) with a
+[T 1022 | 333]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Get-guid-Y-6]	Write 'a' -> {40, ts: 1/guid-Y-3}
+[T 1022 | 333]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Get-guid-Y-6]	Put('kv:data:a', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "40",
+        "timestamp": {
+            "value": 1,
+            "timestamp_uid": "guid-Y-3"
+        }
+    }
+}>')
+[T 1066 | 334]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-3:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 35,
+        "trace_id": "Set-guid-Z-8",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"b\"\n    }\n}"
+    }
+}>
+[T 1066 | 336]	[Info   ]	[Server-kv-1 /T1]	[RPC-Server  ]	[Set-guid-Z-8]	Process Replica.LocalRead request from Server-kv-3, id = 35
+[T 1066 | 336]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	galqiwi_log (128, 255, 128)
+[T 1066 | 336]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Set-guid-Z-8]	TryGet(kv:data:b)
+[T 1066 | 336]	[Info   ]	[Server-kv-1 /T1]	[Network     ]	[Set-guid-Z-8]	Send packet to Server-kv-3:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 35,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1066 | 337]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-3:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 36,
+        "trace_id": "Set-guid-Z-8",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"b\"\n    }\n}"
+    }
+}>
+[T 1066 | 339]	[Info   ]	[Server-kv-2 /T1]	[RPC-Server  ]	[Set-guid-Z-8]	Process Replica.LocalRead request from Server-kv-3, id = 36
+[T 1066 | 339]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	galqiwi_log (128, 255, 128)
+[T 1066 | 339]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Set-guid-Z-8]	TryGet(kv:data:b)
+[T 1066 | 339]	[Info   ]	[Server-kv-2 /T1]	[Network     ]	[Set-guid-Z-8]	Send packet to Server-kv-3:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 36,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1067 | 340]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Get-guid-Y-6]	Put('kv:data:a', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "40",
+        "timestamp": {
+            "value": 1,
+            "timestamp_uid": "guid-Y-3"
+        }
+    }
+}>')
+[T 1067 | 340]	[Info   ]	[Server-kv-1 /T1]	[Network     ]	[Get-guid-Y-6]	Send packet to Server-kv-3:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 30,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1099 | 341]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 36,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1099 | 343]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-Z-8]	Request Server-kv-2:42.Replica.LocalRead with id = 36 completed
+[T 1099 | 347]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-Z-8]	Request Server-kv-1:42.Replica.LocalWrite
+[T 1099 | 347]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Set-guid-Z-8]	Send packet to Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 38,
+        "trace_id": "Set-guid-Z-8",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"b\",\n        \"tuple_element1\": {\n            \"value\": \"73\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-9\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1099 | 348]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-Z-8]	Request Server-kv-2:42.Replica.LocalWrite
+[T 1099 | 348]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Set-guid-Z-8]	Send packet to Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 39,
+        "trace_id": "Set-guid-Z-8",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"b\",\n        \"tuple_element1\": {\n            \"value\": \"73\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-9\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1099 | 349]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-Z-8]	Request Server-kv-3:42.Replica.LocalWrite
+[T 1099 | 349]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Set-guid-Z-8]	Send packet to Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 40,
+        "trace_id": "Set-guid-Z-8",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"b\",\n        \"tuple_element1\": {\n            \"value\": \"73\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-9\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1100 | 350]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-3:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 40,
+        "trace_id": "Set-guid-Z-8",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"b\",\n        \"tuple_element1\": {\n            \"value\": \"73\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-9\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1100 | 352]	[Info   ]	[Server-kv-3 /T1]	[RPC-Server  ]	[Set-guid-Z-8]	Process Replica.LocalWrite request from Server-kv-3, id = 40
+[T 1100 | 352]	[Info   ]	[Server-kv-3 /T1]	[Database    ]	[Set-guid-Z-8]	TryGet(kv:data:b)
+[T 1100 | 352]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	galqiwi local_write got (nothing>73) with b
+[T 1100 | 352]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	galqiwi_log (255, 128, 128)
+[T 1100 | 352]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	Write 'b' -> {73, ts: 1/guid-Y-9}
+[T 1100 | 352]	[Info   ]	[Server-kv-3 /T1]	[Database    ]	[Set-guid-Z-8]	Put('kv:data:b', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "73",
+        "timestamp": {
+            "value": 1,
+            "timestamp_uid": "guid-Y-9"
+        }
+    }
+}>')
+[T 1102 | 353]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Client-2:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 33,
+        "trace_id": "Get-guid-X-7",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "KV",
+            "name": "Get"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 1102 | 355]	[Info   ]	[Server-kv-1 /T1]	[RPC-Server  ]	[Get-guid-X-7]	Process KV.Get request from Client-2, id = 33
+[T 1102 | 356]	[Info   ]	[Server-kv-1    ]	[RPC-Channel ]	[Get-guid-X-7]	Request Server-kv-1:42.Replica.LocalRead
+[T 1102 | 356]	[Info   ]	[Server-kv-1    ]	[Network     ]	[Get-guid-X-7]	Send packet to Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 41,
+        "trace_id": "Get-guid-X-7",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 1102 | 357]	[Info   ]	[Server-kv-1    ]	[RPC-Channel ]	[Get-guid-X-7]	Request Server-kv-2:42.Replica.LocalRead
+[T 1102 | 357]	[Info   ]	[Server-kv-1    ]	[Network     ]	[Get-guid-X-7]	Send packet to Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 42,
+        "trace_id": "Get-guid-X-7",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 1102 | 358]	[Info   ]	[Server-kv-1    ]	[RPC-Channel ]	[Get-guid-X-7]	Request Server-kv-3:42.Replica.LocalRead
+[T 1102 | 358]	[Info   ]	[Server-kv-1    ]	[Network     ]	[Get-guid-X-7]	Send packet to Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 43,
+        "trace_id": "Get-guid-X-7",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 1102 | 359]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 35,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1102 | 361]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-Z-8]	Request Server-kv-1:42.Replica.LocalRead with id = 35 completed
+[T 1103 | 365]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 30,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1103 | 367]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-Y-6]	Request Server-kv-1:42.Replica.LocalWrite with id = 30 completed
+[T 1103 | 371]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-1:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 41,
+        "trace_id": "Get-guid-X-7",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 1103 | 373]	[Info   ]	[Server-kv-1 /T1]	[RPC-Server  ]	[Get-guid-X-7]	Process Replica.LocalRead request from Server-kv-1, id = 41
+[T 1103 | 373]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Get-guid-X-7]	galqiwi_log (128, 255, 128)
+[T 1103 | 373]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Get-guid-X-7]	TryGet(kv:data:a)
+[T 1103 | 373]	[Info   ]	[Server-kv-1 /T1]	[Network     ]	[Get-guid-X-7]	Send packet to Server-kv-1:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 41,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"40\",\n        \"timestamp\": {\n            \"value\": 1,\n            \"timestamp_uid\": \"guid-Y-3\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1104 | 374]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 41,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"40\",\n        \"timestamp\": {\n            \"value\": 1,\n            \"timestamp_uid\": \"guid-Y-3\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1104 | 376]	[Info   ]	[Server-kv-1    ]	[RPC-Channel ]	[Get-guid-X-7]	Request Server-kv-1:42.Replica.LocalRead with id = 41 completed
+[T 1130 | 380]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-3:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 38,
+        "trace_id": "Set-guid-Z-8",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"b\",\n        \"tuple_element1\": {\n            \"value\": \"73\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-9\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1130 | 382]	[Info   ]	[Server-kv-1 /T1]	[RPC-Server  ]	[Set-guid-Z-8]	Process Replica.LocalWrite request from Server-kv-3, id = 38
+[T 1130 | 382]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Set-guid-Z-8]	TryGet(kv:data:b)
+[T 1130 | 382]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	galqiwi local_write got (nothing>73) with b
+[T 1130 | 382]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	galqiwi_log (255, 128, 128)
+[T 1130 | 382]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	Write 'b' -> {73, ts: 1/guid-Y-9}
+[T 1130 | 382]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Set-guid-Z-8]	Put('kv:data:b', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "73",
+        "timestamp": {
+            "value": 1,
+            "timestamp_uid": "guid-Y-9"
+        }
+    }
+}>')
+[T 1137 | 383]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-1:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 43,
+        "trace_id": "Get-guid-X-7",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 1137 | 385]	[Info   ]	[Server-kv-3 /T1]	[RPC-Server  ]	[Get-guid-X-7]	Process Replica.LocalRead request from Server-kv-1, id = 43
+[T 1137 | 385]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Get-guid-X-7]	galqiwi_log (128, 255, 128)
+[T 1137 | 385]	[Info   ]	[Server-kv-3 /T1]	[Database    ]	[Get-guid-X-7]	TryGet(kv:data:a)
+[T 1137 | 385]	[Info   ]	[Server-kv-3 /T1]	[Network     ]	[Get-guid-X-7]	Send packet to Server-kv-1:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 43,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"40\",\n        \"timestamp\": {\n            \"value\": 1,\n            \"timestamp_uid\": \"guid-Y-3\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1154 | 386]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-3:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 39,
+        "trace_id": "Set-guid-Z-8",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"b\",\n        \"tuple_element1\": {\n            \"value\": \"73\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-9\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1154 | 388]	[Info   ]	[Server-kv-2 /T1]	[RPC-Server  ]	[Set-guid-Z-8]	Process Replica.LocalWrite request from Server-kv-3, id = 39
+[T 1154 | 388]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Set-guid-Z-8]	TryGet(kv:data:b)
+[T 1154 | 388]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	galqiwi local_write got (nothing>73) with b
+[T 1154 | 388]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	galqiwi_log (255, 128, 128)
+[T 1154 | 388]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	Write 'b' -> {73, ts: 1/guid-Y-9}
+[T 1154 | 388]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Set-guid-Z-8]	Put('kv:data:b', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "73",
+        "timestamp": {
+            "value": 1,
+            "timestamp_uid": "guid-Y-9"
+        }
+    }
+}>')
+[T 1157 | 389]	[Info   ]	[Server-kv-3 /T1]	[Database    ]	[Set-guid-Z-8]	Put('kv:data:b', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "73",
+        "timestamp": {
+            "value": 1,
+            "timestamp_uid": "guid-Y-9"
+        }
+    }
+}>')
+[T 1157 | 389]	[Info   ]	[Server-kv-3 /T1]	[Network     ]	[Set-guid-Z-8]	Send packet to Server-kv-3:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 40,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1158 | 390]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 40,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1158 | 392]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-Z-8]	Request Server-kv-3:42.Replica.LocalWrite with id = 40 completed
+[T 1194 | 396]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Set-guid-Z-8]	Put('kv:data:b', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "73",
+        "timestamp": {
+            "value": 1,
+            "timestamp_uid": "guid-Y-9"
+        }
+    }
+}>')
+[T 1194 | 396]	[Info   ]	[Server-kv-1 /T1]	[Network     ]	[Set-guid-Z-8]	Send packet to Server-kv-3:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 38,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1194 | 397]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 43,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"40\",\n        \"timestamp\": {\n            \"value\": 1,\n            \"timestamp_uid\": \"guid-Y-3\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1194 | 399]	[Info   ]	[Server-kv-1    ]	[RPC-Channel ]	[Get-guid-X-7]	Request Server-kv-3:42.Replica.LocalRead with id = 43 completed
+[T 1194 | 402]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Coord]	[Get-guid-X-7]	galqiwi got output (40)
+[T 1194 | 403]	[Info   ]	[Server-kv-1    ]	[RPC-Channel ]	[Get-guid-X-7]	Request Server-kv-1:42.Replica.LocalWrite
+[T 1194 | 403]	[Info   ]	[Server-kv-1    ]	[Network     ]	[Get-guid-X-7]	Send packet to Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 44,
+        "trace_id": "Get-guid-X-7",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1194 | 404]	[Info   ]	[Server-kv-1    ]	[RPC-Channel ]	[Get-guid-X-7]	Request Server-kv-2:42.Replica.LocalWrite
+[T 1194 | 404]	[Info   ]	[Server-kv-1    ]	[Network     ]	[Get-guid-X-7]	Send packet to Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 45,
+        "trace_id": "Get-guid-X-7",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1194 | 405]	[Info   ]	[Server-kv-1    ]	[RPC-Channel ]	[Get-guid-X-7]	Request Server-kv-3:42.Replica.LocalWrite
+[T 1194 | 405]	[Info   ]	[Server-kv-1    ]	[Network     ]	[Get-guid-X-7]	Send packet to Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 46,
+        "trace_id": "Get-guid-X-7",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1195 | 406]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-1:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 44,
+        "trace_id": "Get-guid-X-7",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1195 | 408]	[Info   ]	[Server-kv-1 /T1]	[RPC-Server  ]	[Get-guid-X-7]	Process Replica.LocalWrite request from Server-kv-1, id = 44
+[T 1195 | 408]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Get-guid-X-7]	TryGet(kv:data:a)
+[T 1195 | 408]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Get-guid-X-7]	galqiwi_log (255, 255, 128)
+[T 1195 | 408]	[Info   ]	[Server-kv-1 /T1]	[Network     ]	[Get-guid-X-7]	Send packet to Server-kv-1:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 44,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1196 | 409]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 44,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1196 | 411]	[Info   ]	[Server-kv-1    ]	[RPC-Channel ]	[Get-guid-X-7]	Request Server-kv-1:42.Replica.LocalWrite with id = 44 completed
+[T 1236 | 415]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Set-guid-Z-8]	Put('kv:data:b', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "73",
+        "timestamp": {
+            "value": 1,
+            "timestamp_uid": "guid-Y-9"
+        }
+    }
+}>')
+[T 1236 | 415]	[Info   ]	[Server-kv-2 /T1]	[Network     ]	[Set-guid-Z-8]	Send packet to Server-kv-3:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 39,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1242 | 416]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-1:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 46,
+        "trace_id": "Get-guid-X-7",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1242 | 418]	[Info   ]	[Server-kv-3 /T1]	[RPC-Server  ]	[Get-guid-X-7]	Process Replica.LocalWrite request from Server-kv-1, id = 46
+[T 1242 | 418]	[Info   ]	[Server-kv-3 /T1]	[Database    ]	[Get-guid-X-7]	TryGet(kv:data:a)
+[T 1242 | 418]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Get-guid-X-7]	galqiwi_log (255, 255, 128)
+[T 1242 | 418]	[Info   ]	[Server-kv-3 /T1]	[Network     ]	[Get-guid-X-7]	Send packet to Server-kv-1:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 46,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1244 | 419]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 17,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1244 | 421]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-X-4]	Request Server-kv-1:42.Replica.LocalRead with id = 17 completed
+[T 1244 | 424]	[Info   ]	[Server-kv-3 /T6]	[KVNode.Coord]	[Get-guid-X-4]	galqiwi got output (40)
+[T 1244 | 425]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-X-4]	Request Server-kv-1:42.Replica.LocalWrite
+[T 1244 | 425]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Get-guid-X-4]	Send packet to Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 47,
+        "trace_id": "Get-guid-X-4",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1244 | 426]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-X-4]	Request Server-kv-2:42.Replica.LocalWrite
+[T 1244 | 426]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Get-guid-X-4]	Send packet to Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 48,
+        "trace_id": "Get-guid-X-4",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1244 | 427]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-X-4]	Request Server-kv-3:42.Replica.LocalWrite
+[T 1244 | 427]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Get-guid-X-4]	Send packet to Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 49,
+        "trace_id": "Get-guid-X-4",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1245 | 428]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-3:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 49,
+        "trace_id": "Get-guid-X-4",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1245 | 430]	[Info   ]	[Server-kv-3 /T1]	[RPC-Server  ]	[Get-guid-X-4]	Process Replica.LocalWrite request from Server-kv-3, id = 49
+[T 1245 | 430]	[Info   ]	[Server-kv-3 /T1]	[Database    ]	[Get-guid-X-4]	TryGet(kv:data:a)
+[T 1245 | 430]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Get-guid-X-4]	galqiwi_log (255, 255, 128)
+[T 1245 | 430]	[Info   ]	[Server-kv-3 /T1]	[Network     ]	[Get-guid-X-4]	Send packet to Server-kv-3:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 49,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1246 | 431]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 38,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1246 | 433]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-Z-8]	Request Server-kv-1:42.Replica.LocalWrite with id = 38 completed
+[T 1246 | 436]	[Info   ]	[Server-kv-3 /T1]	[Network     ]	[Set-guid-Z-8]	Send packet to Client-1:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 34,
+        "method": {
+            "service": "KV",
+            "name": "Set"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1246 | 437]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 49,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1246 | 439]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-X-4]	Request Server-kv-3:42.Replica.LocalWrite with id = 49 completed
+[T 1247 | 443]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-1:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 45,
+        "trace_id": "Get-guid-X-7",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1247 | 445]	[Info   ]	[Server-kv-2 /T1]	[RPC-Server  ]	[Get-guid-X-7]	Process Replica.LocalWrite request from Server-kv-1, id = 45
+[T 1247 | 445]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Get-guid-X-7]	TryGet(kv:data:a)
+[T 1247 | 445]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Get-guid-X-7]	galqiwi_log (255, 255, 128)
+[T 1247 | 445]	[Info   ]	[Server-kv-2 /T1]	[Network     ]	[Get-guid-X-7]	Send packet to Server-kv-1:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 45,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1277 | 446]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 45,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1277 | 448]	[Info   ]	[Server-kv-1    ]	[RPC-Channel ]	[Get-guid-X-7]	Request Server-kv-2:42.Replica.LocalWrite with id = 45 completed
+[T 1277 | 451]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Coord]	[Get-guid-X-7]	galqiwi returned output (40)
+[T 1277 | 451]	[Info   ]	[Server-kv-1 /T1]	[Network     ]	[Get-guid-X-7]	Send packet to Client-2:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 33,
+        "method": {
+            "service": "KV",
+            "name": "Get"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::string\"\n    },\n    \"object\": \"40\"\n}",
+        "error": 0
+    }
+}>
+[T 1285 | 452]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 46,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1285 | 454]	[Info   ]	[Server-kv-1    ]	[RPC-Channel ]	[Get-guid-X-7]	Request Server-kv-3:42.Replica.LocalWrite with id = 46 completed
+[T 1291 | 458]	[Info   ]	[Client-1       ]	[Transport   ]	Handle message from Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 34,
+        "method": {
+            "service": "KV",
+            "name": "Set"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1291 | 460]	[Info   ]	[Client-1       ]	[RPC-Channel ]	[Set-guid-Z-8]	Request Server-kv-3:42.KV.Set with id = 34 completed
+[T 1291 | 464]	[Info   ]	[Client-1 /main ]	[Client      ]	Set completed
+[T 1296 | 465]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-3:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 47,
+        "trace_id": "Get-guid-X-4",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1296 | 467]	[Info   ]	[Server-kv-1 /T1]	[RPC-Server  ]	[Get-guid-X-4]	Process Replica.LocalWrite request from Server-kv-3, id = 47
+[T 1296 | 467]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Get-guid-X-4]	TryGet(kv:data:a)
+[T 1296 | 467]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Get-guid-X-4]	galqiwi_log (255, 255, 128)
+[T 1296 | 467]	[Info   ]	[Server-kv-1 /T1]	[Network     ]	[Get-guid-X-4]	Send packet to Server-kv-3:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 47,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1298 | 468]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-3:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 48,
+        "trace_id": "Get-guid-X-4",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"40\",\n            \"timestamp\": {\n                \"value\": 1,\n                \"timestamp_uid\": \"guid-Y-3\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1298 | 470]	[Info   ]	[Server-kv-2 /T1]	[RPC-Server  ]	[Get-guid-X-4]	Process Replica.LocalWrite request from Server-kv-3, id = 48
+[T 1298 | 470]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Get-guid-X-4]	TryGet(kv:data:a)
+[T 1298 | 470]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Get-guid-X-4]	galqiwi_log (255, 255, 128)
+[T 1298 | 470]	[Info   ]	[Server-kv-2 /T1]	[Network     ]	[Get-guid-X-4]	Send packet to Server-kv-3:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 48,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1337 | 471]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 47,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1337 | 473]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-X-4]	Request Server-kv-1:42.Replica.LocalWrite with id = 47 completed
+[T 1337 | 476]	[Info   ]	[Server-kv-3 /T6]	[KVNode.Coord]	[Get-guid-X-4]	galqiwi returned output (40)
+[T 1337 | 476]	[Info   ]	[Server-kv-3 /T6]	[Network     ]	[Get-guid-X-4]	Send packet to Client-3:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 15,
+        "method": {
+            "service": "KV",
+            "name": "Get"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::string\"\n    },\n    \"object\": \"40\"\n}",
+        "error": 0
+    }
+}>
+[T 1339 | 477]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 48,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1339 | 479]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-X-4]	Request Server-kv-2:42.Replica.LocalWrite with id = 48 completed
+[T 1381 | 483]	[Info   ]	[Client-3       ]	[Transport   ]	Handle message from Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 15,
+        "method": {
+            "service": "KV",
+            "name": "Get"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::string\"\n    },\n    \"object\": \"40\"\n}",
+        "error": 0
+    }
+}>
+[T 1381 | 485]	[Info   ]	[Client-3       ]	[RPC-Channel ]	[Get-guid-X-4]	Request Server-kv-3:42.KV.Get with id = 15 completed
+[T 1381 | 489]	[Info   ]	[Client-3 /main ]	[Client      ]	Get(a) -> 40
+[T 1383 | 490]	[Info   ]	[Client-3 /main ]	[Client      ]	Execute Set(a, 71)
+[T 1383 | 491]	[Info   ]	[Client-3       ]	[RPC-Channel ]	[Set-guid-X-10]	Request Server-kv-3:42.KV.Set
+[T 1383 | 491]	[Info   ]	[Client-3       ]	[Network     ]	[Set-guid-X-10]	Send packet to Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 50,
+        "trace_id": "Set-guid-X-10",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "KV",
+            "name": "Set"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": \"71\"\n    }\n}"
+    }
+}>
+[T 1414 | 492]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 24,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"\",\n        \"timestamp\": {\n            \"value\": 0,\n            \"timestamp_uid\": \"\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1414 | 494]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-Y-6]	Request Server-kv-1:42.Replica.LocalRead with id = 24 completed
+[T 1432 | 498]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Client-3:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 50,
+        "trace_id": "Set-guid-X-10",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "KV",
+            "name": "Set"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": \"71\"\n    }\n}"
+    }
+}>
+[T 1432 | 500]	[Info   ]	[Server-kv-3 /T1]	[RPC-Server  ]	[Set-guid-X-10]	Process KV.Set request from Client-3, id = 50
+[T 1432 | 501]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-X-10]	Request Server-kv-1:42.Replica.LocalRead
+[T 1432 | 501]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Set-guid-X-10]	Send packet to Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 51,
+        "trace_id": "Set-guid-X-10",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 1432 | 502]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-X-10]	Request Server-kv-2:42.Replica.LocalRead
+[T 1432 | 502]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Set-guid-X-10]	Send packet to Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 52,
+        "trace_id": "Set-guid-X-10",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 1432 | 503]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-X-10]	Request Server-kv-3:42.Replica.LocalRead
+[T 1432 | 503]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Set-guid-X-10]	Send packet to Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 53,
+        "trace_id": "Set-guid-X-10",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 1433 | 504]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-3:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 53,
+        "trace_id": "Set-guid-X-10",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 1433 | 506]	[Info   ]	[Server-kv-3 /T2]	[RPC-Server  ]	[Set-guid-X-10]	Process Replica.LocalRead request from Server-kv-3, id = 53
+[T 1433 | 506]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-X-10]	galqiwi_log (128, 255, 128)
+[T 1433 | 506]	[Info   ]	[Server-kv-3 /T2]	[Database    ]	[Set-guid-X-10]	TryGet(kv:data:a)
+[T 1433 | 506]	[Info   ]	[Server-kv-3 /T2]	[Network     ]	[Set-guid-X-10]	Send packet to Server-kv-3:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 53,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"40\",\n        \"timestamp\": {\n            \"value\": 1,\n            \"timestamp_uid\": \"guid-Y-3\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1434 | 507]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 53,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"40\",\n        \"timestamp\": {\n            \"value\": 1,\n            \"timestamp_uid\": \"guid-Y-3\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1434 | 509]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-X-10]	Request Server-kv-3:42.Replica.LocalRead with id = 53 completed
+[T 1464 | 513]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-3:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 52,
+        "trace_id": "Set-guid-X-10",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 1464 | 515]	[Info   ]	[Server-kv-2 /T1]	[RPC-Server  ]	[Set-guid-X-10]	Process Replica.LocalRead request from Server-kv-3, id = 52
+[T 1464 | 515]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Set-guid-X-10]	galqiwi_log (128, 255, 128)
+[T 1464 | 515]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Set-guid-X-10]	TryGet(kv:data:a)
+[T 1464 | 515]	[Info   ]	[Server-kv-2 /T1]	[Network     ]	[Set-guid-X-10]	Send packet to Server-kv-3:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 52,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"40\",\n        \"timestamp\": {\n            \"value\": 1,\n            \"timestamp_uid\": \"guid-Y-3\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1476 | 516]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-3:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 51,
+        "trace_id": "Set-guid-X-10",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 1476 | 518]	[Info   ]	[Server-kv-1 /T1]	[RPC-Server  ]	[Set-guid-X-10]	Process Replica.LocalRead request from Server-kv-3, id = 51
+[T 1476 | 518]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Set-guid-X-10]	galqiwi_log (128, 255, 128)
+[T 1476 | 518]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Set-guid-X-10]	TryGet(kv:data:a)
+[T 1476 | 518]	[Info   ]	[Server-kv-1 /T1]	[Network     ]	[Set-guid-X-10]	Send packet to Server-kv-3:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 51,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"40\",\n        \"timestamp\": {\n            \"value\": 1,\n            \"timestamp_uid\": \"guid-Y-3\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1491 | 519]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 39,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1491 | 521]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-Z-8]	Request Server-kv-2:42.Replica.LocalWrite with id = 39 completed
+[T 1503 | 525]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 52,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"40\",\n        \"timestamp\": {\n            \"value\": 1,\n            \"timestamp_uid\": \"guid-Y-3\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1503 | 527]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-X-10]	Request Server-kv-2:42.Replica.LocalRead with id = 52 completed
+[T 1503 | 531]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-X-10]	Request Server-kv-1:42.Replica.LocalWrite
+[T 1503 | 531]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Set-guid-X-10]	Send packet to Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 54,
+        "trace_id": "Set-guid-X-10",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"71\",\n            \"timestamp\": {\n                \"value\": 2,\n                \"timestamp_uid\": \"guid-Z-11\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1503 | 532]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-X-10]	Request Server-kv-2:42.Replica.LocalWrite
+[T 1503 | 532]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Set-guid-X-10]	Send packet to Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 55,
+        "trace_id": "Set-guid-X-10",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"71\",\n            \"timestamp\": {\n                \"value\": 2,\n                \"timestamp_uid\": \"guid-Z-11\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1503 | 533]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-X-10]	Request Server-kv-3:42.Replica.LocalWrite
+[T 1503 | 533]	[Info   ]	[Server-kv-3    ]	[Network     ]	[Set-guid-X-10]	Send packet to Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 56,
+        "trace_id": "Set-guid-X-10",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"71\",\n            \"timestamp\": {\n                \"value\": 2,\n                \"timestamp_uid\": \"guid-Z-11\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1504 | 534]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-3:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 56,
+        "trace_id": "Set-guid-X-10",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"71\",\n            \"timestamp\": {\n                \"value\": 2,\n                \"timestamp_uid\": \"guid-Z-11\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1504 | 536]	[Info   ]	[Server-kv-3 /T2]	[RPC-Server  ]	[Set-guid-X-10]	Process Replica.LocalWrite request from Server-kv-3, id = 56
+[T 1504 | 536]	[Info   ]	[Server-kv-3 /T2]	[Database    ]	[Set-guid-X-10]	TryGet(kv:data:a)
+[T 1504 | 536]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-X-10]	galqiwi_log (255, 128, 128)
+[T 1504 | 536]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-X-10]	galqiwi local_write got (40>71) with a
+[T 1504 | 536]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-X-10]	Write 'a' -> {71, ts: 2/guid-Z-11}
+[T 1504 | 536]	[Info   ]	[Server-kv-3 /T2]	[Database    ]	[Set-guid-X-10]	Put('kv:data:a', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "71",
+        "timestamp": {
+            "value": 2,
+            "timestamp_uid": "guid-Z-11"
+        }
+    }
+}>')
+[T 1505 | 537]	[Info   ]	[Client-1 /main ]	[Client      ]	Execute Set(a, 32)
+[T 1505 | 538]	[Info   ]	[Client-1       ]	[RPC-Channel ]	[Set-guid-Y-12]	Request Server-kv-2:42.KV.Set
+[T 1505 | 538]	[Info   ]	[Client-1       ]	[Transport   ]	[Set-guid-Y-12]	Connecting to Server-kv-2:42: local port = 3
+[T 1505 | 538]	[Info   ]	[Client-1       ]	[Network     ]	[Set-guid-Y-12]	Send packet to Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 57,
+        "trace_id": "Set-guid-Y-12",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "KV",
+            "name": "Set"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": \"32\"\n    }\n}"
+    }
+}>
+[T 1507 | 539]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-3:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 18,
+        "trace_id": "Get-guid-X-4",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 1507 | 541]	[Info   ]	[Server-kv-2 /T1]	[RPC-Server  ]	[Get-guid-X-4]	Process Replica.LocalRead request from Server-kv-3, id = 18
+[T 1507 | 541]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Get-guid-X-4]	galqiwi_log (128, 255, 128)
+[T 1507 | 541]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Get-guid-X-4]	TryGet(kv:data:a)
+[T 1507 | 541]	[Info   ]	[Server-kv-2 /T1]	[Network     ]	[Get-guid-X-4]	Send packet to Server-kv-3:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 18,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"40\",\n        \"timestamp\": {\n            \"value\": 1,\n            \"timestamp_uid\": \"guid-Y-3\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1532 | 542]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 51,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"40\",\n        \"timestamp\": {\n            \"value\": 1,\n            \"timestamp_uid\": \"guid-Y-3\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1532 | 544]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-X-10]	Request Server-kv-1:42.Replica.LocalRead with id = 51 completed
+[T 1533 | 548]	[Info   ]	[Server-kv-3 /T2]	[Database    ]	[Set-guid-X-10]	Put('kv:data:a', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "71",
+        "timestamp": {
+            "value": 2,
+            "timestamp_uid": "guid-Z-11"
+        }
+    }
+}>')
+[T 1533 | 548]	[Info   ]	[Server-kv-3 /T2]	[Network     ]	[Set-guid-X-10]	Send packet to Server-kv-3:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 56,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1534 | 549]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 56,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1534 | 551]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-X-10]	Request Server-kv-3:42.Replica.LocalWrite with id = 56 completed
+[T 1538 | 555]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-3:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 54,
+        "trace_id": "Set-guid-X-10",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"71\",\n            \"timestamp\": {\n                \"value\": 2,\n                \"timestamp_uid\": \"guid-Z-11\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1538 | 557]	[Info   ]	[Server-kv-1 /T1]	[RPC-Server  ]	[Set-guid-X-10]	Process Replica.LocalWrite request from Server-kv-3, id = 54
+[T 1538 | 557]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Set-guid-X-10]	TryGet(kv:data:a)
+[T 1538 | 557]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Set-guid-X-10]	galqiwi_log (255, 128, 128)
+[T 1538 | 557]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Set-guid-X-10]	galqiwi local_write got (40>71) with a
+[T 1538 | 557]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Set-guid-X-10]	Write 'a' -> {71, ts: 2/guid-Z-11}
+[T 1538 | 557]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Set-guid-X-10]	Put('kv:data:a', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "71",
+        "timestamp": {
+            "value": 2,
+            "timestamp_uid": "guid-Z-11"
+        }
+    }
+}>')
+[T 1548 | 558]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 18,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"40\",\n        \"timestamp\": {\n            \"value\": 1,\n            \"timestamp_uid\": \"guid-Y-3\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1548 | 560]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Get-guid-X-4]	Request Server-kv-2:42.Replica.LocalRead with id = 18 completed
+[T 1556 | 564]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Client-1:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 57,
+        "trace_id": "Set-guid-Y-12",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "KV",
+            "name": "Set"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": \"32\"\n    }\n}"
+    }
+}>
+[T 1556 | 566]	[Info   ]	[Server-kv-2 /T1]	[RPC-Server  ]	[Set-guid-Y-12]	Process KV.Set request from Client-1, id = 57
+[T 1556 | 567]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Set-guid-Y-12]	Request Server-kv-1:42.Replica.LocalRead
+[T 1556 | 567]	[Info   ]	[Server-kv-2    ]	[Network     ]	[Set-guid-Y-12]	Send packet to Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 58,
+        "trace_id": "Set-guid-Y-12",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 1556 | 568]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Set-guid-Y-12]	Request Server-kv-2:42.Replica.LocalRead
+[T 1556 | 568]	[Info   ]	[Server-kv-2    ]	[Network     ]	[Set-guid-Y-12]	Send packet to Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 59,
+        "trace_id": "Set-guid-Y-12",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 1556 | 569]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Set-guid-Y-12]	Request Server-kv-3:42.Replica.LocalRead
+[T 1556 | 569]	[Info   ]	[Server-kv-2    ]	[Network     ]	[Set-guid-Y-12]	Send packet to Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 60,
+        "trace_id": "Set-guid-Y-12",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 1557 | 570]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-2:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 59,
+        "trace_id": "Set-guid-Y-12",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 1557 | 572]	[Info   ]	[Server-kv-2 /T1]	[RPC-Server  ]	[Set-guid-Y-12]	Process Replica.LocalRead request from Server-kv-2, id = 59
+[T 1557 | 572]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Set-guid-Y-12]	galqiwi_log (128, 255, 128)
+[T 1557 | 572]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Set-guid-Y-12]	TryGet(kv:data:a)
+[T 1557 | 572]	[Info   ]	[Server-kv-2 /T1]	[Network     ]	[Set-guid-Y-12]	Send packet to Server-kv-2:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 59,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"40\",\n        \"timestamp\": {\n            \"value\": 1,\n            \"timestamp_uid\": \"guid-Y-3\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1558 | 573]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 59,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"40\",\n        \"timestamp\": {\n            \"value\": 1,\n            \"timestamp_uid\": \"guid-Y-3\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1558 | 575]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Set-guid-Y-12]	Request Server-kv-2:42.Replica.LocalRead with id = 59 completed
+[T 1598 | 579]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-2:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 60,
+        "trace_id": "Set-guid-Y-12",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 1598 | 581]	[Info   ]	[Server-kv-3 /T2]	[RPC-Server  ]	[Set-guid-Y-12]	Process Replica.LocalRead request from Server-kv-2, id = 60
+[T 1598 | 581]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	galqiwi_log (128, 255, 128)
+[T 1598 | 581]	[Info   ]	[Server-kv-3 /T2]	[Database    ]	[Set-guid-Y-12]	TryGet(kv:data:a)
+[T 1598 | 581]	[Info   ]	[Server-kv-3 /T2]	[Network     ]	[Set-guid-Y-12]	Send packet to Server-kv-2:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 60,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"71\",\n        \"timestamp\": {\n            \"value\": 2,\n            \"timestamp_uid\": \"guid-Z-11\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1605 | 582]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Set-guid-X-10]	Put('kv:data:a', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "71",
+        "timestamp": {
+            "value": 2,
+            "timestamp_uid": "guid-Z-11"
+        }
+    }
+}>')
+[T 1605 | 582]	[Info   ]	[Server-kv-1 /T1]	[Network     ]	[Set-guid-X-10]	Send packet to Server-kv-3:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 54,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1633 | 583]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 60,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"71\",\n        \"timestamp\": {\n            \"value\": 2,\n            \"timestamp_uid\": \"guid-Z-11\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1633 | 585]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Set-guid-Y-12]	Request Server-kv-3:42.Replica.LocalRead with id = 60 completed
+[T 1633 | 589]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Set-guid-Y-12]	Request Server-kv-1:42.Replica.LocalWrite
+[T 1633 | 589]	[Info   ]	[Server-kv-2    ]	[Network     ]	[Set-guid-Y-12]	Send packet to Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 61,
+        "trace_id": "Set-guid-Y-12",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"32\",\n            \"timestamp\": {\n                \"value\": 3,\n                \"timestamp_uid\": \"guid-X-13\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1633 | 590]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Set-guid-Y-12]	Request Server-kv-2:42.Replica.LocalWrite
+[T 1633 | 590]	[Info   ]	[Server-kv-2    ]	[Network     ]	[Set-guid-Y-12]	Send packet to Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 62,
+        "trace_id": "Set-guid-Y-12",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"32\",\n            \"timestamp\": {\n                \"value\": 3,\n                \"timestamp_uid\": \"guid-X-13\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1633 | 591]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Set-guid-Y-12]	Request Server-kv-3:42.Replica.LocalWrite
+[T 1633 | 591]	[Info   ]	[Server-kv-2    ]	[Network     ]	[Set-guid-Y-12]	Send packet to Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 63,
+        "trace_id": "Set-guid-Y-12",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"32\",\n            \"timestamp\": {\n                \"value\": 3,\n                \"timestamp_uid\": \"guid-X-13\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1634 | 592]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-2:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 62,
+        "trace_id": "Set-guid-Y-12",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"32\",\n            \"timestamp\": {\n                \"value\": 3,\n                \"timestamp_uid\": \"guid-X-13\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1634 | 594]	[Info   ]	[Server-kv-2 /T2]	[RPC-Server  ]	[Set-guid-Y-12]	Process Replica.LocalWrite request from Server-kv-2, id = 62
+[T 1634 | 594]	[Info   ]	[Server-kv-2 /T2]	[Database    ]	[Set-guid-Y-12]	TryGet(kv:data:a)
+[T 1634 | 594]	[Info   ]	[Server-kv-2 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	galqiwi_log (255, 128, 128)
+[T 1634 | 594]	[Info   ]	[Server-kv-2 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	galqiwi local_write got (40>32) with a
+[T 1634 | 594]	[Info   ]	[Server-kv-2 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	Write 'a' -> {32, ts: 3/guid-X-13}
+[T 1634 | 594]	[Info   ]	[Server-kv-2 /T2]	[Database    ]	[Set-guid-Y-12]	Put('kv:data:a', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "32",
+        "timestamp": {
+            "value": 3,
+            "timestamp_uid": "guid-X-13"
+        }
+    }
+}>')
+[T 1638 | 595]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-1:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 54,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1638 | 597]	[Info   ]	[Server-kv-3    ]	[RPC-Channel ]	[Set-guid-X-10]	Request Server-kv-1:42.Replica.LocalWrite with id = 54 completed
+[T 1638 | 600]	[Info   ]	[Server-kv-3 /T1]	[Network     ]	[Set-guid-X-10]	Send packet to Client-3:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 50,
+        "method": {
+            "service": "KV",
+            "name": "Set"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1651 | 601]	[Info   ]	[Server-kv-2 /T2]	[Database    ]	[Set-guid-Y-12]	Put('kv:data:a', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "32",
+        "timestamp": {
+            "value": 3,
+            "timestamp_uid": "guid-X-13"
+        }
+    }
+}>')
+[T 1651 | 601]	[Info   ]	[Server-kv-2 /T2]	[Network     ]	[Set-guid-Y-12]	Send packet to Server-kv-2:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 62,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1652 | 602]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-2:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 62,
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1652 | 604]	[Info   ]	[Server-kv-2    ]	[RPC-Channel ]	[Set-guid-Y-12]	Request Server-kv-2:42.Replica.LocalWrite with id = 62 completed
+[T 1674 | 608]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Handle message from Server-kv-2:1: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 61,
+        "trace_id": "Set-guid-Y-12",
+        "to": "Server-kv-1:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"32\",\n            \"timestamp\": {\n                \"value\": 3,\n                \"timestamp_uid\": \"guid-X-13\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1674 | 610]	[Info   ]	[Server-kv-1 /T2]	[RPC-Server  ]	[Set-guid-Y-12]	Process Replica.LocalWrite request from Server-kv-2, id = 61
+[T 1674 | 610]	[Info   ]	[Server-kv-1 /T2]	[Database    ]	[Set-guid-Y-12]	TryGet(kv:data:a)
+[T 1674 | 610]	[Info   ]	[Server-kv-1 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	galqiwi_log (255, 128, 128)
+[T 1674 | 610]	[Info   ]	[Server-kv-1 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	galqiwi local_write got (71>32) with a
+[T 1674 | 610]	[Info   ]	[Server-kv-1 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	Write 'a' -> {32, ts: 3/guid-X-13}
+[T 1674 | 610]	[Info   ]	[Server-kv-1 /T2]	[Database    ]	[Set-guid-Y-12]	Put('kv:data:a', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "32",
+        "timestamp": {
+            "value": 3,
+            "timestamp_uid": "guid-X-13"
+        }
+    }
+}>')
+[T 1676 | 611]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Handle message from Server-kv-1:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 42,
+        "trace_id": "Get-guid-X-7",
+        "to": "Server-kv-2:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\"\n    }\n}"
+    }
+}>
+[T 1676 | 613]	[Info   ]	[Server-kv-2 /T2]	[RPC-Server  ]	[Get-guid-X-7]	Process Replica.LocalRead request from Server-kv-1, id = 42
+[T 1676 | 613]	[Info   ]	[Server-kv-2 /T2]	[KVNode.Repli]	[Get-guid-X-7]	galqiwi_log (128, 255, 128)
+[T 1676 | 613]	[Info   ]	[Server-kv-2 /T2]	[Database    ]	[Get-guid-X-7]	TryGet(kv:data:a)
+[T 1676 | 613]	[Info   ]	[Server-kv-2 /T2]	[Network     ]	[Get-guid-X-7]	Send packet to Server-kv-1:2: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 42,
+        "method": {
+            "service": "Replica",
+            "name": "LocalRead"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"StampedValue\"\n    },\n    \"object\": {\n        \"value\": \"32\",\n        \"timestamp\": {\n            \"value\": 3,\n            \"timestamp_uid\": \"guid-X-13\"\n        }\n    }\n}",
+        "error": 0
+    }
+}>
+[T 1692 | 614]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Handle message from Server-kv-2:3: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Request"
+    },
+    "object": {
+        "id": 63,
+        "trace_id": "Set-guid-Y-12",
+        "to": "Server-kv-3:42",
+        "method": {
+            "service": "Replica",
+            "name": "LocalWrite"
+        },
+        "input": "{\n    \"header\": {\n        \"type_name\": \"std::tuple<std::basic_string<char>, StampedValue>\"\n    },\n    \"object\": {\n        \"tuple_element0\": \"a\",\n        \"tuple_element1\": {\n            \"value\": \"32\",\n            \"timestamp\": {\n                \"value\": 3,\n                \"timestamp_uid\": \"guid-X-13\"\n            }\n        }\n    }\n}"
+    }
+}>
+[T 1692 | 616]	[Info   ]	[Server-kv-3 /T2]	[RPC-Server  ]	[Set-guid-Y-12]	Process Replica.LocalWrite request from Server-kv-2, id = 63
+[T 1692 | 616]	[Info   ]	[Server-kv-3 /T2]	[Database    ]	[Set-guid-Y-12]	TryGet(kv:data:a)
+[T 1692 | 616]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	galqiwi_log (255, 128, 128)
+[T 1692 | 616]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	galqiwi local_write got (71>32) with a
+[T 1692 | 616]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	Write 'a' -> {32, ts: 3/guid-X-13}
+[T 1692 | 616]	[Info   ]	[Server-kv-3 /T2]	[Database    ]	[Set-guid-Y-12]	Put('kv:data:a', '<{
+    "header": {
+        "type_name": "StampedValue"
+    },
+    "object": {
+        "value": "32",
+        "timestamp": {
+            "value": 3,
+            "timestamp_uid": "guid-X-13"
+        }
+    }
+}>')
+[T 1696 | 617]	[Info   ]	[Client-3       ]	[Transport   ]	Handle message from Server-kv-3:42: <{
+    "header": {
+        "type_name": "commute::rpc::proto::Response"
+    },
+    "object": {
+        "request_id": 50,
+        "method": {
+            "service": "KV",
+            "name": "Set"
+        },
+        "result": "{\n    \"header\": {\n        \"type_name\": \"std::monostate\"\n    },\n    \"object\": {}\n}",
+        "error": 0
+    }
+}>
+[T 1696 | 619]	[Info   ]	[Client-3       ]	[RPC-Channel ]	[Set-guid-X-10]	Request Server-kv-3:42.KV.Set with id = 50 completed
+[T 1696 | 623]	[Info   ]	[Client-3 /main ]	[Client      ]	Set completed
+[T 1696 | 623]	[Info   ]	[World          ]	[World       ]	Adversaries stopped
+[T 1696 | 623]	[Info   ]	[World          ]	[World       ]	Network stopped
+[T 1696 | 623]	[Info   ]	[Server-kv-1    ]	[Server      ]	Crash server Server-kv-1
+[T 1696 | 623]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Remove endpoint at port 1
+[T 1696 | 623]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Remove endpoint at port 2
+[T 1696 | 623]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Remove endpoint at port 3
+[T 1696 | 623]	[Info   ]	[Server-kv-1    ]	[Transport   ]	Remove endpoint at port 42
+[T 1696 | 623]	[Info   ]	[Server-kv-2    ]	[Server      ]	Crash server Server-kv-2
+[T 1696 | 623]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Remove endpoint at port 1
+[T 1696 | 623]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Remove endpoint at port 2
+[T 1696 | 623]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Remove endpoint at port 3
+[T 1696 | 623]	[Info   ]	[Server-kv-2    ]	[Transport   ]	Remove endpoint at port 42
+[T 1696 | 623]	[Info   ]	[Server-kv-3    ]	[Server      ]	Crash server Server-kv-3
+[T 1696 | 623]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Remove endpoint at port 1
+[T 1696 | 623]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Remove endpoint at port 2
+[T 1696 | 623]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Remove endpoint at port 3
+[T 1696 | 623]	[Info   ]	[Server-kv-3    ]	[Transport   ]	Remove endpoint at port 42
+[T 1696 | 623]	[Info   ]	[World          ]	[World       ]	Servers stopped
+[T 1696 | 623]	[Info   ]	[Client-1       ]	[Server      ]	Crash server Client-1
+[T 1696 | 623]	[Info   ]	[Client-1       ]	[Transport   ]	Remove endpoint at port 1
+[T 1696 | 623]	[Info   ]	[Client-1       ]	[Transport   ]	Remove endpoint at port 2
+[T 1696 | 623]	[Info   ]	[Client-1       ]	[Transport   ]	Remove endpoint at port 3
+[T 1696 | 623]	[Info   ]	[Client-2       ]	[Server      ]	Crash server Client-2
+[T 1696 | 623]	[Info   ]	[Client-2       ]	[Transport   ]	Remove endpoint at port 1
+[T 1696 | 623]	[Info   ]	[Client-2       ]	[Transport   ]	Remove endpoint at port 2
+[T 1696 | 623]	[Info   ]	[Client-2       ]	[Transport   ]	Remove endpoint at port 3
+[T 1696 | 623]	[Info   ]	[Client-3       ]	[Server      ]	Crash server Client-3
+[T 1696 | 623]	[Info   ]	[Client-3       ]	[Transport   ]	Remove endpoint at port 1
+[T 1696 | 623]	[Info   ]	[Client-3       ]	[Transport   ]	Remove endpoint at port 2
+[T 1696 | 623]	[Info   ]	[World          ]	[World       ]	Clients stopped
+[T 1696 | 623]	[Info   ]	[World          ]	[World       ]	Simulation stopped
