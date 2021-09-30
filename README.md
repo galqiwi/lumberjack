@@ -11,13 +11,13 @@ pip install -r requirements.txt
 ## Как пользоваться
 
 ```
-python3 -l <путь до лога> -o <путь до отчета>
+python3 lumberjack.py -l <путь до лога> -o <путь до отчета>
 ```
 
 ### Пример
 
 ```
-python3 -l examples/log.txt -o out.png
+python3 lumberjack.py -l examples/log.txt -o out.png
 ```
 
 Результат работы скрипта:
