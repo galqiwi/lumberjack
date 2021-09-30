@@ -149,7 +149,7 @@ Whirl simulator log
     }
 }>
 [T 265 | 30]	[Info   ]	[Server-kv-2 /T3]	[RPC-Server  ]	[Get-guid-Z-2]	Process Replica.LocalRead request from Server-kv-2, id = 4
-[T 265 | 30]	[Info   ]	[Server-kv-2 /T3]	[KVNode.Repli]	[Get-guid-Z-2]	galqiwi_log (128, 255, 128)
+[T 265 | 30]	[Info   ]	[Server-kv-2 /T3]	[KVNode.Repli]	[Get-guid-Z-2]	lumberjack_event (128, 255, 128)
 [T 265 | 30]	[Info   ]	[Server-kv-2 /T3]	[Database    ]	[Get-guid-Z-2]	TryGet(kv:data:a)
 [T 265 | 30]	[Info   ]	[Server-kv-2 /T3]	[Network     ]	[Get-guid-Z-2]	Send packet to Server-kv-2:2: <{
     "header": {
@@ -260,7 +260,7 @@ Whirl simulator log
     }
 }>
 [T 271 | 45]	[Info   ]	[Server-kv-2 /T5]	[RPC-Server  ]	[Set-guid-X-1]	Process Replica.LocalRead request from Server-kv-2, id = 7
-[T 271 | 45]	[Info   ]	[Server-kv-2 /T5]	[KVNode.Repli]	[Set-guid-X-1]	galqiwi_log (128, 255, 128)
+[T 271 | 45]	[Info   ]	[Server-kv-2 /T5]	[KVNode.Repli]	[Set-guid-X-1]	lumberjack_event (128, 255, 128)
 [T 271 | 45]	[Info   ]	[Server-kv-2 /T5]	[Database    ]	[Set-guid-X-1]	TryGet(kv:data:a)
 [T 271 | 45]	[Info   ]	[Server-kv-2 /T5]	[Network     ]	[Set-guid-X-1]	Send packet to Server-kv-2:2: <{
     "header": {
@@ -307,7 +307,7 @@ Whirl simulator log
     }
 }>
 [T 292 | 54]	[Info   ]	[Server-kv-1 /T2]	[RPC-Server  ]	[Get-guid-Z-2]	Process Replica.LocalRead request from Server-kv-2, id = 3
-[T 292 | 54]	[Info   ]	[Server-kv-1 /T2]	[KVNode.Repli]	[Get-guid-Z-2]	galqiwi_log (128, 255, 128)
+[T 292 | 54]	[Info   ]	[Server-kv-1 /T2]	[KVNode.Repli]	[Get-guid-Z-2]	lumberjack_event (128, 255, 128)
 [T 292 | 54]	[Info   ]	[Server-kv-1 /T2]	[Database    ]	[Get-guid-Z-2]	TryGet(kv:data:a)
 [T 292 | 54]	[Info   ]	[Server-kv-1 /T2]	[Network     ]	[Get-guid-Z-2]	Send packet to Server-kv-2:1: <{
     "header": {
@@ -339,7 +339,7 @@ Whirl simulator log
     }
 }>
 [T 305 | 57]	[Info   ]	[Server-kv-1 /T3]	[RPC-Server  ]	[Set-guid-X-1]	Process Replica.LocalRead request from Server-kv-2, id = 6
-[T 305 | 57]	[Info   ]	[Server-kv-1 /T3]	[KVNode.Repli]	[Set-guid-X-1]	galqiwi_log (128, 255, 128)
+[T 305 | 57]	[Info   ]	[Server-kv-1 /T3]	[KVNode.Repli]	[Set-guid-X-1]	lumberjack_event (128, 255, 128)
 [T 305 | 57]	[Info   ]	[Server-kv-1 /T3]	[Database    ]	[Set-guid-X-1]	TryGet(kv:data:a)
 [T 305 | 57]	[Info   ]	[Server-kv-1 /T3]	[Network     ]	[Set-guid-X-1]	Send packet to Server-kv-2:1: <{
     "header": {
@@ -371,7 +371,7 @@ Whirl simulator log
     }
 }>
 [T 313 | 60]	[Info   ]	[Server-kv-3 /T2]	[RPC-Server  ]	[Set-guid-X-1]	Process Replica.LocalRead request from Server-kv-2, id = 8
-[T 313 | 60]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-X-1]	galqiwi_log (128, 255, 128)
+[T 313 | 60]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-X-1]	lumberjack_event (128, 255, 128)
 [T 313 | 60]	[Info   ]	[Server-kv-3 /T2]	[Database    ]	[Set-guid-X-1]	TryGet(kv:data:a)
 [T 313 | 60]	[Info   ]	[Server-kv-3 /T2]	[Network     ]	[Set-guid-X-1]	Send packet to Server-kv-2:3: <{
     "header": {
@@ -403,7 +403,7 @@ Whirl simulator log
     }
 }>
 [T 314 | 63]	[Info   ]	[Server-kv-3 /T3]	[RPC-Server  ]	[Get-guid-Z-2]	Process Replica.LocalRead request from Server-kv-2, id = 5
-[T 314 | 63]	[Info   ]	[Server-kv-3 /T3]	[KVNode.Repli]	[Get-guid-Z-2]	galqiwi_log (128, 255, 128)
+[T 314 | 63]	[Info   ]	[Server-kv-3 /T3]	[KVNode.Repli]	[Get-guid-Z-2]	lumberjack_event (128, 255, 128)
 [T 314 | 63]	[Info   ]	[Server-kv-3 /T3]	[Database    ]	[Get-guid-Z-2]	TryGet(kv:data:a)
 [T 314 | 63]	[Info   ]	[Server-kv-3 /T3]	[Network     ]	[Get-guid-Z-2]	Send packet to Server-kv-2:3: <{
     "header": {
@@ -500,7 +500,7 @@ Whirl simulator log
 [T 338 | 75]	[Info   ]	[Server-kv-2 /T6]	[RPC-Server  ]	[Set-guid-X-1]	Process Replica.LocalWrite request from Server-kv-2, id = 10
 [T 338 | 75]	[Info   ]	[Server-kv-2 /T6]	[Database    ]	[Set-guid-X-1]	TryGet(kv:data:a)
 [T 338 | 75]	[Info   ]	[Server-kv-2 /T6]	[KVNode.Repli]	[Set-guid-X-1]	galqiwi local_write got (nothing>40) with a
-[T 338 | 75]	[Info   ]	[Server-kv-2 /T6]	[KVNode.Repli]	[Set-guid-X-1]	galqiwi_log (255, 128, 128)
+[T 338 | 75]	[Info   ]	[Server-kv-2 /T6]	[KVNode.Repli]	[Set-guid-X-1]	lumberjack_event (255, 128, 128)
 [T 338 | 75]	[Info   ]	[Server-kv-2 /T6]	[KVNode.Repli]	[Set-guid-X-1]	Write 'a' -> {40, ts: 1/guid-Y-3}
 [T 338 | 75]	[Info   ]	[Server-kv-2 /T6]	[Database    ]	[Set-guid-X-1]	Put('kv:data:a', '<{
     "header": {
@@ -596,7 +596,7 @@ Whirl simulator log
 [T 342 | 87]	[Info   ]	[Server-kv-2 /T7]	[RPC-Server  ]	[Get-guid-Z-2]	Process Replica.LocalWrite request from Server-kv-2, id = 13
 [T 342 | 87]	[Info   ]	[Server-kv-2 /T7]	[Database    ]	[Get-guid-Z-2]	TryGet(kv:data:a)
 [T 342 | 87]	[Info   ]	[Server-kv-2 /T7]	[KVNode.Repli]	[Get-guid-Z-2]	galqiwi local_write got (nothing>) with a
-[T 342 | 87]	[Info   ]	[Server-kv-2 /T7]	[KVNode.Repli]	[Get-guid-Z-2]	galqiwi_log (255, 128, 128)
+[T 342 | 87]	[Info   ]	[Server-kv-2 /T7]	[KVNode.Repli]	[Get-guid-Z-2]	lumberjack_event (255, 128, 128)
 [T 342 | 87]	[Info   ]	[Server-kv-2 /T7]	[KVNode.Repli]	[Get-guid-Z-2]	Write 'a' -> {, ts: 0/}
 [T 342 | 87]	[Info   ]	[Server-kv-2 /T7]	[Database    ]	[Get-guid-Z-2]	Put('kv:data:a', '<{
     "header": {
@@ -658,7 +658,7 @@ Whirl simulator log
 [T 375 | 102]	[Info   ]	[Server-kv-3 /T4]	[RPC-Server  ]	[Set-guid-X-1]	Process Replica.LocalWrite request from Server-kv-2, id = 11
 [T 375 | 102]	[Info   ]	[Server-kv-3 /T4]	[Database    ]	[Set-guid-X-1]	TryGet(kv:data:a)
 [T 375 | 102]	[Info   ]	[Server-kv-3 /T4]	[KVNode.Repli]	[Set-guid-X-1]	galqiwi local_write got (nothing>40) with a
-[T 375 | 102]	[Info   ]	[Server-kv-3 /T4]	[KVNode.Repli]	[Set-guid-X-1]	galqiwi_log (255, 128, 128)
+[T 375 | 102]	[Info   ]	[Server-kv-3 /T4]	[KVNode.Repli]	[Set-guid-X-1]	lumberjack_event (255, 128, 128)
 [T 375 | 102]	[Info   ]	[Server-kv-3 /T4]	[KVNode.Repli]	[Set-guid-X-1]	Write 'a' -> {40, ts: 1/guid-Y-3}
 [T 375 | 102]	[Info   ]	[Server-kv-3 /T4]	[Database    ]	[Set-guid-X-1]	Put('kv:data:a', '<{
     "header": {
@@ -716,7 +716,7 @@ Whirl simulator log
 [T 380 | 106]	[Info   ]	[Server-kv-1 /T4]	[RPC-Server  ]	[Set-guid-X-1]	Process Replica.LocalWrite request from Server-kv-2, id = 9
 [T 380 | 106]	[Info   ]	[Server-kv-1 /T4]	[Database    ]	[Set-guid-X-1]	TryGet(kv:data:a)
 [T 380 | 106]	[Info   ]	[Server-kv-1 /T4]	[KVNode.Repli]	[Set-guid-X-1]	galqiwi local_write got (nothing>40) with a
-[T 380 | 106]	[Info   ]	[Server-kv-1 /T4]	[KVNode.Repli]	[Set-guid-X-1]	galqiwi_log (255, 128, 128)
+[T 380 | 106]	[Info   ]	[Server-kv-1 /T4]	[KVNode.Repli]	[Set-guid-X-1]	lumberjack_event (255, 128, 128)
 [T 380 | 106]	[Info   ]	[Server-kv-1 /T4]	[KVNode.Repli]	[Set-guid-X-1]	Write 'a' -> {40, ts: 1/guid-Y-3}
 [T 380 | 106]	[Info   ]	[Server-kv-1 /T4]	[Database    ]	[Set-guid-X-1]	Put('kv:data:a', '<{
     "header": {
@@ -748,7 +748,7 @@ Whirl simulator log
 [T 380 | 109]	[Info   ]	[Server-kv-1 /T5]	[RPC-Server  ]	[Get-guid-Z-2]	Process Replica.LocalWrite request from Server-kv-2, id = 12
 [T 380 | 109]	[Info   ]	[Server-kv-1 /T5]	[Database    ]	[Get-guid-Z-2]	TryGet(kv:data:a)
 [T 380 | 109]	[Info   ]	[Server-kv-1 /T5]	[KVNode.Repli]	[Get-guid-Z-2]	galqiwi local_write got (nothing>) with a
-[T 380 | 109]	[Info   ]	[Server-kv-1 /T5]	[KVNode.Repli]	[Get-guid-Z-2]	galqiwi_log (255, 128, 128)
+[T 380 | 109]	[Info   ]	[Server-kv-1 /T5]	[KVNode.Repli]	[Get-guid-Z-2]	lumberjack_event (255, 128, 128)
 [T 380 | 109]	[Info   ]	[Server-kv-1 /T5]	[KVNode.Repli]	[Get-guid-Z-2]	Write 'a' -> {, ts: 0/}
 [T 380 | 109]	[Info   ]	[Server-kv-1 /T5]	[Database    ]	[Get-guid-Z-2]	Put('kv:data:a', '<{
     "header": {
@@ -779,7 +779,7 @@ Whirl simulator log
 }>
 [T 390 | 112]	[Info   ]	[Server-kv-3 /T5]	[RPC-Server  ]	[Get-guid-Z-2]	Process Replica.LocalWrite request from Server-kv-2, id = 14
 [T 390 | 112]	[Info   ]	[Server-kv-3 /T5]	[Database    ]	[Get-guid-Z-2]	TryGet(kv:data:a)
-[T 390 | 112]	[Info   ]	[Server-kv-3 /T5]	[KVNode.Repli]	[Get-guid-Z-2]	galqiwi_log (255, 255, 128)
+[T 390 | 112]	[Info   ]	[Server-kv-3 /T5]	[KVNode.Repli]	[Get-guid-Z-2]	lumberjack_event (255, 255, 128)
 [T 390 | 112]	[Info   ]	[Server-kv-3 /T5]	[Network     ]	[Get-guid-Z-2]	Send packet to Server-kv-2:3: <{
     "header": {
         "type_name": "commute::rpc::proto::Response"
@@ -1152,7 +1152,7 @@ Whirl simulator log
     }
 }>
 [T 616 | 173]	[Info   ]	[Server-kv-3 /T7]	[RPC-Server  ]	[Get-guid-X-4]	Process Replica.LocalRead request from Server-kv-3, id = 19
-[T 616 | 173]	[Info   ]	[Server-kv-3 /T7]	[KVNode.Repli]	[Get-guid-X-4]	galqiwi_log (128, 255, 128)
+[T 616 | 173]	[Info   ]	[Server-kv-3 /T7]	[KVNode.Repli]	[Get-guid-X-4]	lumberjack_event (128, 255, 128)
 [T 616 | 173]	[Info   ]	[Server-kv-3 /T7]	[Database    ]	[Get-guid-X-4]	TryGet(kv:data:a)
 [T 616 | 173]	[Info   ]	[Server-kv-3 /T7]	[Network     ]	[Get-guid-X-4]	Send packet to Server-kv-3:3: <{
     "header": {
@@ -1233,7 +1233,7 @@ Whirl simulator log
     }
 }>
 [T 673 | 191]	[Info   ]	[Server-kv-1 /T6]	[RPC-Server  ]	[Get-guid-X-4]	Process Replica.LocalRead request from Server-kv-3, id = 17
-[T 673 | 191]	[Info   ]	[Server-kv-1 /T6]	[KVNode.Repli]	[Get-guid-X-4]	galqiwi_log (128, 255, 128)
+[T 673 | 191]	[Info   ]	[Server-kv-1 /T6]	[KVNode.Repli]	[Get-guid-X-4]	lumberjack_event (128, 255, 128)
 [T 673 | 191]	[Info   ]	[Server-kv-1 /T6]	[Database    ]	[Get-guid-X-4]	TryGet(kv:data:a)
 [T 673 | 191]	[Info   ]	[Server-kv-1 /T6]	[Network     ]	[Get-guid-X-4]	Send packet to Server-kv-3:1: <{
     "header": {
@@ -1332,7 +1332,7 @@ Whirl simulator log
     }
 }>
 [T 688 | 200]	[Info   ]	[Server-kv-1 /T8]	[RPC-Server  ]	[Get-guid-Z-5]	Process Replica.LocalRead request from Server-kv-1, id = 21
-[T 688 | 200]	[Info   ]	[Server-kv-1 /T8]	[KVNode.Repli]	[Get-guid-Z-5]	galqiwi_log (128, 255, 128)
+[T 688 | 200]	[Info   ]	[Server-kv-1 /T8]	[KVNode.Repli]	[Get-guid-Z-5]	lumberjack_event (128, 255, 128)
 [T 688 | 200]	[Info   ]	[Server-kv-1 /T8]	[Database    ]	[Get-guid-Z-5]	TryGet(kv:data:a)
 [T 688 | 200]	[Info   ]	[Server-kv-1 /T8]	[Network     ]	[Get-guid-Z-5]	Send packet to Server-kv-1:1: <{
     "header": {
@@ -1443,7 +1443,7 @@ Whirl simulator log
     }
 }>
 [T 698 | 215]	[Info   ]	[Server-kv-3 /T9]	[RPC-Server  ]	[Get-guid-Y-6]	Process Replica.LocalRead request from Server-kv-3, id = 26
-[T 698 | 215]	[Info   ]	[Server-kv-3 /T9]	[KVNode.Repli]	[Get-guid-Y-6]	galqiwi_log (128, 255, 128)
+[T 698 | 215]	[Info   ]	[Server-kv-3 /T9]	[KVNode.Repli]	[Get-guid-Y-6]	lumberjack_event (128, 255, 128)
 [T 698 | 215]	[Info   ]	[Server-kv-3 /T9]	[Database    ]	[Get-guid-Y-6]	TryGet(kv:data:a)
 [T 698 | 215]	[Info   ]	[Server-kv-3 /T9]	[Network     ]	[Get-guid-Y-6]	Send packet to Server-kv-3:3: <{
     "header": {
@@ -1490,7 +1490,7 @@ Whirl simulator log
     }
 }>
 [T 719 | 224]	[Info   ]	[Server-kv-2 /T8]	[RPC-Server  ]	[Get-guid-Z-5]	Process Replica.LocalRead request from Server-kv-1, id = 22
-[T 719 | 224]	[Info   ]	[Server-kv-2 /T8]	[KVNode.Repli]	[Get-guid-Z-5]	galqiwi_log (128, 255, 128)
+[T 719 | 224]	[Info   ]	[Server-kv-2 /T8]	[KVNode.Repli]	[Get-guid-Z-5]	lumberjack_event (128, 255, 128)
 [T 719 | 224]	[Info   ]	[Server-kv-2 /T8]	[Database    ]	[Get-guid-Z-5]	TryGet(kv:data:a)
 [T 719 | 224]	[Info   ]	[Server-kv-2 /T8]	[Network     ]	[Get-guid-Z-5]	Send packet to Server-kv-1:2: <{
     "header": {
@@ -1522,7 +1522,7 @@ Whirl simulator log
     }
 }>
 [T 732 | 227]	[Info   ]	[Server-kv-2 /T9]	[RPC-Server  ]	[Get-guid-Y-6]	Process Replica.LocalRead request from Server-kv-3, id = 25
-[T 732 | 227]	[Info   ]	[Server-kv-2 /T9]	[KVNode.Repli]	[Get-guid-Y-6]	galqiwi_log (128, 255, 128)
+[T 732 | 227]	[Info   ]	[Server-kv-2 /T9]	[KVNode.Repli]	[Get-guid-Y-6]	lumberjack_event (128, 255, 128)
 [T 732 | 227]	[Info   ]	[Server-kv-2 /T9]	[Database    ]	[Get-guid-Y-6]	TryGet(kv:data:a)
 [T 732 | 227]	[Info   ]	[Server-kv-2 /T9]	[Network     ]	[Get-guid-Y-6]	Send packet to Server-kv-3:2: <{
     "header": {
@@ -1554,7 +1554,7 @@ Whirl simulator log
     }
 }>
 [T 735 | 230]	[Info   ]	[Server-kv-3 /T1]	[RPC-Server  ]	[Get-guid-Z-5]	Process Replica.LocalRead request from Server-kv-1, id = 23
-[T 735 | 230]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Get-guid-Z-5]	galqiwi_log (128, 255, 128)
+[T 735 | 230]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Get-guid-Z-5]	lumberjack_event (128, 255, 128)
 [T 735 | 230]	[Info   ]	[Server-kv-3 /T1]	[Database    ]	[Get-guid-Z-5]	TryGet(kv:data:a)
 [T 735 | 230]	[Info   ]	[Server-kv-3 /T1]	[Network     ]	[Get-guid-Z-5]	Send packet to Server-kv-1:3: <{
     "header": {
@@ -1586,7 +1586,7 @@ Whirl simulator log
     }
 }>
 [T 753 | 233]	[Info   ]	[Server-kv-1 /T9]	[RPC-Server  ]	[Get-guid-Y-6]	Process Replica.LocalRead request from Server-kv-3, id = 24
-[T 753 | 233]	[Info   ]	[Server-kv-1 /T9]	[KVNode.Repli]	[Get-guid-Y-6]	galqiwi_log (128, 255, 128)
+[T 753 | 233]	[Info   ]	[Server-kv-1 /T9]	[KVNode.Repli]	[Get-guid-Y-6]	lumberjack_event (128, 255, 128)
 [T 753 | 233]	[Info   ]	[Server-kv-1 /T9]	[Database    ]	[Get-guid-Y-6]	TryGet(kv:data:a)
 [T 753 | 233]	[Info   ]	[Server-kv-1 /T9]	[Network     ]	[Get-guid-Y-6]	Send packet to Server-kv-3:1: <{
     "header": {
@@ -1683,7 +1683,7 @@ Whirl simulator log
 }>
 [T 773 | 245]	[Info   ]	[Server-kv-1 /T1]	[RPC-Server  ]	[Get-guid-Z-5]	Process Replica.LocalWrite request from Server-kv-1, id = 27
 [T 773 | 245]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Get-guid-Z-5]	TryGet(kv:data:a)
-[T 773 | 245]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Get-guid-Z-5]	galqiwi_log (255, 255, 128)
+[T 773 | 245]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Get-guid-Z-5]	lumberjack_event (255, 255, 128)
 [T 773 | 245]	[Info   ]	[Server-kv-1 /T1]	[Network     ]	[Get-guid-Z-5]	Send packet to Server-kv-1:1: <{
     "header": {
         "type_name": "commute::rpc::proto::Response"
@@ -1794,7 +1794,7 @@ Whirl simulator log
 }>
 [T 792 | 263]	[Info   ]	[Server-kv-3 /T1]	[RPC-Server  ]	[Get-guid-Y-6]	Process Replica.LocalWrite request from Server-kv-3, id = 32
 [T 792 | 263]	[Info   ]	[Server-kv-3 /T1]	[Database    ]	[Get-guid-Y-6]	TryGet(kv:data:a)
-[T 792 | 263]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Get-guid-Y-6]	galqiwi_log (255, 255, 128)
+[T 792 | 263]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Get-guid-Y-6]	lumberjack_event (255, 255, 128)
 [T 792 | 263]	[Info   ]	[Server-kv-3 /T1]	[Network     ]	[Get-guid-Y-6]	Send packet to Server-kv-3:3: <{
     "header": {
         "type_name": "commute::rpc::proto::Response"
@@ -1856,7 +1856,7 @@ Whirl simulator log
 }>
 [T 811 | 278]	[Info   ]	[Server-kv-3 /T1]	[RPC-Server  ]	[Get-guid-Z-5]	Process Replica.LocalWrite request from Server-kv-1, id = 29
 [T 811 | 278]	[Info   ]	[Server-kv-3 /T1]	[Database    ]	[Get-guid-Z-5]	TryGet(kv:data:a)
-[T 811 | 278]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Get-guid-Z-5]	galqiwi_log (255, 255, 128)
+[T 811 | 278]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Get-guid-Z-5]	lumberjack_event (255, 255, 128)
 [T 811 | 278]	[Info   ]	[Server-kv-3 /T1]	[Network     ]	[Get-guid-Z-5]	Send packet to Server-kv-1:3: <{
     "header": {
         "type_name": "commute::rpc::proto::Response"
@@ -1888,7 +1888,7 @@ Whirl simulator log
 }>
 [T 826 | 281]	[Info   ]	[Server-kv-2 /T1]	[RPC-Server  ]	[Get-guid-Z-5]	Process Replica.LocalWrite request from Server-kv-1, id = 28
 [T 826 | 281]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Get-guid-Z-5]	TryGet(kv:data:a)
-[T 826 | 281]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Get-guid-Z-5]	galqiwi_log (255, 255, 128)
+[T 826 | 281]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Get-guid-Z-5]	lumberjack_event (255, 255, 128)
 [T 826 | 281]	[Info   ]	[Server-kv-2 /T1]	[Network     ]	[Get-guid-Z-5]	Send packet to Server-kv-1:2: <{
     "header": {
         "type_name": "commute::rpc::proto::Response"
@@ -1920,7 +1920,7 @@ Whirl simulator log
 }>
 [T 833 | 284]	[Info   ]	[Server-kv-2 /T1]	[RPC-Server  ]	[Get-guid-Y-6]	Process Replica.LocalWrite request from Server-kv-3, id = 31
 [T 833 | 284]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Get-guid-Y-6]	TryGet(kv:data:a)
-[T 833 | 284]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Get-guid-Y-6]	galqiwi_log (255, 128, 128)
+[T 833 | 284]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Get-guid-Y-6]	lumberjack_event (255, 128, 128)
 [T 833 | 284]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Get-guid-Y-6]	galqiwi local_write got (>40) with a
 [T 833 | 284]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Get-guid-Y-6]	Write 'a' -> {40, ts: 1/guid-Y-3}
 [T 833 | 284]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Get-guid-Y-6]	Put('kv:data:a', '<{
@@ -2169,7 +2169,7 @@ Whirl simulator log
     }
 }>
 [T 1010 | 324]	[Info   ]	[Server-kv-3 /T1]	[RPC-Server  ]	[Set-guid-Z-8]	Process Replica.LocalRead request from Server-kv-3, id = 37
-[T 1010 | 324]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	galqiwi_log (128, 255, 128)
+[T 1010 | 324]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	lumberjack_event (128, 255, 128)
 [T 1010 | 324]	[Info   ]	[Server-kv-3 /T1]	[Database    ]	[Set-guid-Z-8]	TryGet(kv:data:b)
 [T 1010 | 324]	[Info   ]	[Server-kv-3 /T1]	[Network     ]	[Set-guid-Z-8]	Send packet to Server-kv-3:3: <{
     "header": {
@@ -2217,7 +2217,7 @@ Whirl simulator log
 }>
 [T 1022 | 333]	[Info   ]	[Server-kv-1 /T1]	[RPC-Server  ]	[Get-guid-Y-6]	Process Replica.LocalWrite request from Server-kv-3, id = 30
 [T 1022 | 333]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Get-guid-Y-6]	TryGet(kv:data:a)
-[T 1022 | 333]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Get-guid-Y-6]	galqiwi_log (255, 128, 128)
+[T 1022 | 333]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Get-guid-Y-6]	lumberjack_event (255, 128, 128)
 [T 1022 | 333]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Get-guid-Y-6]	galqiwi local_write got (>40) with a
 [T 1022 | 333]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Get-guid-Y-6]	Write 'a' -> {40, ts: 1/guid-Y-3}
 [T 1022 | 333]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Get-guid-Y-6]	Put('kv:data:a', '<{
@@ -2248,7 +2248,7 @@ Whirl simulator log
     }
 }>
 [T 1066 | 336]	[Info   ]	[Server-kv-1 /T1]	[RPC-Server  ]	[Set-guid-Z-8]	Process Replica.LocalRead request from Server-kv-3, id = 35
-[T 1066 | 336]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	galqiwi_log (128, 255, 128)
+[T 1066 | 336]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	lumberjack_event (128, 255, 128)
 [T 1066 | 336]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Set-guid-Z-8]	TryGet(kv:data:b)
 [T 1066 | 336]	[Info   ]	[Server-kv-1 /T1]	[Network     ]	[Set-guid-Z-8]	Send packet to Server-kv-3:1: <{
     "header": {
@@ -2280,7 +2280,7 @@ Whirl simulator log
     }
 }>
 [T 1066 | 339]	[Info   ]	[Server-kv-2 /T1]	[RPC-Server  ]	[Set-guid-Z-8]	Process Replica.LocalRead request from Server-kv-3, id = 36
-[T 1066 | 339]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	galqiwi_log (128, 255, 128)
+[T 1066 | 339]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	lumberjack_event (128, 255, 128)
 [T 1066 | 339]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Set-guid-Z-8]	TryGet(kv:data:b)
 [T 1066 | 339]	[Info   ]	[Server-kv-2 /T1]	[Network     ]	[Set-guid-Z-8]	Send packet to Server-kv-3:2: <{
     "header": {
@@ -2403,7 +2403,7 @@ Whirl simulator log
 [T 1100 | 352]	[Info   ]	[Server-kv-3 /T1]	[RPC-Server  ]	[Set-guid-Z-8]	Process Replica.LocalWrite request from Server-kv-3, id = 40
 [T 1100 | 352]	[Info   ]	[Server-kv-3 /T1]	[Database    ]	[Set-guid-Z-8]	TryGet(kv:data:b)
 [T 1100 | 352]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	galqiwi local_write got (nothing>73) with b
-[T 1100 | 352]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	galqiwi_log (255, 128, 128)
+[T 1100 | 352]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	lumberjack_event (255, 128, 128)
 [T 1100 | 352]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	Write 'b' -> {73, ts: 1/guid-Y-9}
 [T 1100 | 352]	[Info   ]	[Server-kv-3 /T1]	[Database    ]	[Set-guid-Z-8]	Put('kv:data:b', '<{
     "header": {
@@ -2527,7 +2527,7 @@ Whirl simulator log
     }
 }>
 [T 1103 | 373]	[Info   ]	[Server-kv-1 /T1]	[RPC-Server  ]	[Get-guid-X-7]	Process Replica.LocalRead request from Server-kv-1, id = 41
-[T 1103 | 373]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Get-guid-X-7]	galqiwi_log (128, 255, 128)
+[T 1103 | 373]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Get-guid-X-7]	lumberjack_event (128, 255, 128)
 [T 1103 | 373]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Get-guid-X-7]	TryGet(kv:data:a)
 [T 1103 | 373]	[Info   ]	[Server-kv-1 /T1]	[Network     ]	[Get-guid-X-7]	Send packet to Server-kv-1:1: <{
     "header": {
@@ -2576,7 +2576,7 @@ Whirl simulator log
 [T 1130 | 382]	[Info   ]	[Server-kv-1 /T1]	[RPC-Server  ]	[Set-guid-Z-8]	Process Replica.LocalWrite request from Server-kv-3, id = 38
 [T 1130 | 382]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Set-guid-Z-8]	TryGet(kv:data:b)
 [T 1130 | 382]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	galqiwi local_write got (nothing>73) with b
-[T 1130 | 382]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	galqiwi_log (255, 128, 128)
+[T 1130 | 382]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	lumberjack_event (255, 128, 128)
 [T 1130 | 382]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	Write 'b' -> {73, ts: 1/guid-Y-9}
 [T 1130 | 382]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Set-guid-Z-8]	Put('kv:data:b', '<{
     "header": {
@@ -2606,7 +2606,7 @@ Whirl simulator log
     }
 }>
 [T 1137 | 385]	[Info   ]	[Server-kv-3 /T1]	[RPC-Server  ]	[Get-guid-X-7]	Process Replica.LocalRead request from Server-kv-1, id = 43
-[T 1137 | 385]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Get-guid-X-7]	galqiwi_log (128, 255, 128)
+[T 1137 | 385]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Get-guid-X-7]	lumberjack_event (128, 255, 128)
 [T 1137 | 385]	[Info   ]	[Server-kv-3 /T1]	[Database    ]	[Get-guid-X-7]	TryGet(kv:data:a)
 [T 1137 | 385]	[Info   ]	[Server-kv-3 /T1]	[Network     ]	[Get-guid-X-7]	Send packet to Server-kv-1:3: <{
     "header": {
@@ -2640,7 +2640,7 @@ Whirl simulator log
 [T 1154 | 388]	[Info   ]	[Server-kv-2 /T1]	[RPC-Server  ]	[Set-guid-Z-8]	Process Replica.LocalWrite request from Server-kv-3, id = 39
 [T 1154 | 388]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Set-guid-Z-8]	TryGet(kv:data:b)
 [T 1154 | 388]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	galqiwi local_write got (nothing>73) with b
-[T 1154 | 388]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	galqiwi_log (255, 128, 128)
+[T 1154 | 388]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	lumberjack_event (255, 128, 128)
 [T 1154 | 388]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Set-guid-Z-8]	Write 'b' -> {73, ts: 1/guid-Y-9}
 [T 1154 | 388]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Set-guid-Z-8]	Put('kv:data:b', '<{
     "header": {
@@ -2802,7 +2802,7 @@ Whirl simulator log
 }>
 [T 1195 | 408]	[Info   ]	[Server-kv-1 /T1]	[RPC-Server  ]	[Get-guid-X-7]	Process Replica.LocalWrite request from Server-kv-1, id = 44
 [T 1195 | 408]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Get-guid-X-7]	TryGet(kv:data:a)
-[T 1195 | 408]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Get-guid-X-7]	galqiwi_log (255, 255, 128)
+[T 1195 | 408]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Get-guid-X-7]	lumberjack_event (255, 255, 128)
 [T 1195 | 408]	[Info   ]	[Server-kv-1 /T1]	[Network     ]	[Get-guid-X-7]	Send packet to Server-kv-1:1: <{
     "header": {
         "type_name": "commute::rpc::proto::Response"
@@ -2875,7 +2875,7 @@ Whirl simulator log
 }>
 [T 1242 | 418]	[Info   ]	[Server-kv-3 /T1]	[RPC-Server  ]	[Get-guid-X-7]	Process Replica.LocalWrite request from Server-kv-1, id = 46
 [T 1242 | 418]	[Info   ]	[Server-kv-3 /T1]	[Database    ]	[Get-guid-X-7]	TryGet(kv:data:a)
-[T 1242 | 418]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Get-guid-X-7]	galqiwi_log (255, 255, 128)
+[T 1242 | 418]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Get-guid-X-7]	lumberjack_event (255, 255, 128)
 [T 1242 | 418]	[Info   ]	[Server-kv-3 /T1]	[Network     ]	[Get-guid-X-7]	Send packet to Server-kv-1:3: <{
     "header": {
         "type_name": "commute::rpc::proto::Response"
@@ -2971,7 +2971,7 @@ Whirl simulator log
 }>
 [T 1245 | 430]	[Info   ]	[Server-kv-3 /T1]	[RPC-Server  ]	[Get-guid-X-4]	Process Replica.LocalWrite request from Server-kv-3, id = 49
 [T 1245 | 430]	[Info   ]	[Server-kv-3 /T1]	[Database    ]	[Get-guid-X-4]	TryGet(kv:data:a)
-[T 1245 | 430]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Get-guid-X-4]	galqiwi_log (255, 255, 128)
+[T 1245 | 430]	[Info   ]	[Server-kv-3 /T1]	[KVNode.Repli]	[Get-guid-X-4]	lumberjack_event (255, 255, 128)
 [T 1245 | 430]	[Info   ]	[Server-kv-3 /T1]	[Network     ]	[Get-guid-X-4]	Send packet to Server-kv-3:3: <{
     "header": {
         "type_name": "commute::rpc::proto::Response"
@@ -3047,7 +3047,7 @@ Whirl simulator log
 }>
 [T 1247 | 445]	[Info   ]	[Server-kv-2 /T1]	[RPC-Server  ]	[Get-guid-X-7]	Process Replica.LocalWrite request from Server-kv-1, id = 45
 [T 1247 | 445]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Get-guid-X-7]	TryGet(kv:data:a)
-[T 1247 | 445]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Get-guid-X-7]	galqiwi_log (255, 255, 128)
+[T 1247 | 445]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Get-guid-X-7]	lumberjack_event (255, 255, 128)
 [T 1247 | 445]	[Info   ]	[Server-kv-2 /T1]	[Network     ]	[Get-guid-X-7]	Send packet to Server-kv-1:2: <{
     "header": {
         "type_name": "commute::rpc::proto::Response"
@@ -3140,7 +3140,7 @@ Whirl simulator log
 }>
 [T 1296 | 467]	[Info   ]	[Server-kv-1 /T1]	[RPC-Server  ]	[Get-guid-X-4]	Process Replica.LocalWrite request from Server-kv-3, id = 47
 [T 1296 | 467]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Get-guid-X-4]	TryGet(kv:data:a)
-[T 1296 | 467]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Get-guid-X-4]	galqiwi_log (255, 255, 128)
+[T 1296 | 467]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Get-guid-X-4]	lumberjack_event (255, 255, 128)
 [T 1296 | 467]	[Info   ]	[Server-kv-1 /T1]	[Network     ]	[Get-guid-X-4]	Send packet to Server-kv-3:1: <{
     "header": {
         "type_name": "commute::rpc::proto::Response"
@@ -3172,7 +3172,7 @@ Whirl simulator log
 }>
 [T 1298 | 470]	[Info   ]	[Server-kv-2 /T1]	[RPC-Server  ]	[Get-guid-X-4]	Process Replica.LocalWrite request from Server-kv-3, id = 48
 [T 1298 | 470]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Get-guid-X-4]	TryGet(kv:data:a)
-[T 1298 | 470]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Get-guid-X-4]	galqiwi_log (255, 255, 128)
+[T 1298 | 470]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Get-guid-X-4]	lumberjack_event (255, 255, 128)
 [T 1298 | 470]	[Info   ]	[Server-kv-2 /T1]	[Network     ]	[Get-guid-X-4]	Send packet to Server-kv-3:2: <{
     "header": {
         "type_name": "commute::rpc::proto::Response"
@@ -3360,7 +3360,7 @@ Whirl simulator log
     }
 }>
 [T 1433 | 506]	[Info   ]	[Server-kv-3 /T2]	[RPC-Server  ]	[Set-guid-X-10]	Process Replica.LocalRead request from Server-kv-3, id = 53
-[T 1433 | 506]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-X-10]	galqiwi_log (128, 255, 128)
+[T 1433 | 506]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-X-10]	lumberjack_event (128, 255, 128)
 [T 1433 | 506]	[Info   ]	[Server-kv-3 /T2]	[Database    ]	[Set-guid-X-10]	TryGet(kv:data:a)
 [T 1433 | 506]	[Info   ]	[Server-kv-3 /T2]	[Network     ]	[Set-guid-X-10]	Send packet to Server-kv-3:3: <{
     "header": {
@@ -3407,7 +3407,7 @@ Whirl simulator log
     }
 }>
 [T 1464 | 515]	[Info   ]	[Server-kv-2 /T1]	[RPC-Server  ]	[Set-guid-X-10]	Process Replica.LocalRead request from Server-kv-3, id = 52
-[T 1464 | 515]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Set-guid-X-10]	galqiwi_log (128, 255, 128)
+[T 1464 | 515]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Set-guid-X-10]	lumberjack_event (128, 255, 128)
 [T 1464 | 515]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Set-guid-X-10]	TryGet(kv:data:a)
 [T 1464 | 515]	[Info   ]	[Server-kv-2 /T1]	[Network     ]	[Set-guid-X-10]	Send packet to Server-kv-3:2: <{
     "header": {
@@ -3439,7 +3439,7 @@ Whirl simulator log
     }
 }>
 [T 1476 | 518]	[Info   ]	[Server-kv-1 /T1]	[RPC-Server  ]	[Set-guid-X-10]	Process Replica.LocalRead request from Server-kv-3, id = 51
-[T 1476 | 518]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Set-guid-X-10]	galqiwi_log (128, 255, 128)
+[T 1476 | 518]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Set-guid-X-10]	lumberjack_event (128, 255, 128)
 [T 1476 | 518]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Set-guid-X-10]	TryGet(kv:data:a)
 [T 1476 | 518]	[Info   ]	[Server-kv-1 /T1]	[Network     ]	[Set-guid-X-10]	Send packet to Server-kv-3:1: <{
     "header": {
@@ -3550,7 +3550,7 @@ Whirl simulator log
 }>
 [T 1504 | 536]	[Info   ]	[Server-kv-3 /T2]	[RPC-Server  ]	[Set-guid-X-10]	Process Replica.LocalWrite request from Server-kv-3, id = 56
 [T 1504 | 536]	[Info   ]	[Server-kv-3 /T2]	[Database    ]	[Set-guid-X-10]	TryGet(kv:data:a)
-[T 1504 | 536]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-X-10]	galqiwi_log (255, 128, 128)
+[T 1504 | 536]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-X-10]	lumberjack_event (255, 128, 128)
 [T 1504 | 536]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-X-10]	galqiwi local_write got (40>71) with a
 [T 1504 | 536]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-X-10]	Write 'a' -> {71, ts: 2/guid-Z-11}
 [T 1504 | 536]	[Info   ]	[Server-kv-3 /T2]	[Database    ]	[Set-guid-X-10]	Put('kv:data:a', '<{
@@ -3599,7 +3599,7 @@ Whirl simulator log
     }
 }>
 [T 1507 | 541]	[Info   ]	[Server-kv-2 /T1]	[RPC-Server  ]	[Get-guid-X-4]	Process Replica.LocalRead request from Server-kv-3, id = 18
-[T 1507 | 541]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Get-guid-X-4]	galqiwi_log (128, 255, 128)
+[T 1507 | 541]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Get-guid-X-4]	lumberjack_event (128, 255, 128)
 [T 1507 | 541]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Get-guid-X-4]	TryGet(kv:data:a)
 [T 1507 | 541]	[Info   ]	[Server-kv-2 /T1]	[Network     ]	[Get-guid-X-4]	Send packet to Server-kv-3:2: <{
     "header": {
@@ -3688,7 +3688,7 @@ Whirl simulator log
 }>
 [T 1538 | 557]	[Info   ]	[Server-kv-1 /T1]	[RPC-Server  ]	[Set-guid-X-10]	Process Replica.LocalWrite request from Server-kv-3, id = 54
 [T 1538 | 557]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Set-guid-X-10]	TryGet(kv:data:a)
-[T 1538 | 557]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Set-guid-X-10]	galqiwi_log (255, 128, 128)
+[T 1538 | 557]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Set-guid-X-10]	lumberjack_event (255, 128, 128)
 [T 1538 | 557]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Set-guid-X-10]	galqiwi local_write got (40>71) with a
 [T 1538 | 557]	[Info   ]	[Server-kv-1 /T1]	[KVNode.Repli]	[Set-guid-X-10]	Write 'a' -> {71, ts: 2/guid-Z-11}
 [T 1538 | 557]	[Info   ]	[Server-kv-1 /T1]	[Database    ]	[Set-guid-X-10]	Put('kv:data:a', '<{
@@ -3798,7 +3798,7 @@ Whirl simulator log
     }
 }>
 [T 1557 | 572]	[Info   ]	[Server-kv-2 /T1]	[RPC-Server  ]	[Set-guid-Y-12]	Process Replica.LocalRead request from Server-kv-2, id = 59
-[T 1557 | 572]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Set-guid-Y-12]	galqiwi_log (128, 255, 128)
+[T 1557 | 572]	[Info   ]	[Server-kv-2 /T1]	[KVNode.Repli]	[Set-guid-Y-12]	lumberjack_event (128, 255, 128)
 [T 1557 | 572]	[Info   ]	[Server-kv-2 /T1]	[Database    ]	[Set-guid-Y-12]	TryGet(kv:data:a)
 [T 1557 | 572]	[Info   ]	[Server-kv-2 /T1]	[Network     ]	[Set-guid-Y-12]	Send packet to Server-kv-2:2: <{
     "header": {
@@ -3845,7 +3845,7 @@ Whirl simulator log
     }
 }>
 [T 1598 | 581]	[Info   ]	[Server-kv-3 /T2]	[RPC-Server  ]	[Set-guid-Y-12]	Process Replica.LocalRead request from Server-kv-2, id = 60
-[T 1598 | 581]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	galqiwi_log (128, 255, 128)
+[T 1598 | 581]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	lumberjack_event (128, 255, 128)
 [T 1598 | 581]	[Info   ]	[Server-kv-3 /T2]	[Database    ]	[Set-guid-Y-12]	TryGet(kv:data:a)
 [T 1598 | 581]	[Info   ]	[Server-kv-3 /T2]	[Network     ]	[Set-guid-Y-12]	Send packet to Server-kv-2:3: <{
     "header": {
@@ -3967,7 +3967,7 @@ Whirl simulator log
 }>
 [T 1634 | 594]	[Info   ]	[Server-kv-2 /T2]	[RPC-Server  ]	[Set-guid-Y-12]	Process Replica.LocalWrite request from Server-kv-2, id = 62
 [T 1634 | 594]	[Info   ]	[Server-kv-2 /T2]	[Database    ]	[Set-guid-Y-12]	TryGet(kv:data:a)
-[T 1634 | 594]	[Info   ]	[Server-kv-2 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	galqiwi_log (255, 128, 128)
+[T 1634 | 594]	[Info   ]	[Server-kv-2 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	lumberjack_event (255, 128, 128)
 [T 1634 | 594]	[Info   ]	[Server-kv-2 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	galqiwi local_write got (40>32) with a
 [T 1634 | 594]	[Info   ]	[Server-kv-2 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	Write 'a' -> {32, ts: 3/guid-X-13}
 [T 1634 | 594]	[Info   ]	[Server-kv-2 /T2]	[Database    ]	[Set-guid-Y-12]	Put('kv:data:a', '<{
@@ -4069,7 +4069,7 @@ Whirl simulator log
 }>
 [T 1674 | 610]	[Info   ]	[Server-kv-1 /T2]	[RPC-Server  ]	[Set-guid-Y-12]	Process Replica.LocalWrite request from Server-kv-2, id = 61
 [T 1674 | 610]	[Info   ]	[Server-kv-1 /T2]	[Database    ]	[Set-guid-Y-12]	TryGet(kv:data:a)
-[T 1674 | 610]	[Info   ]	[Server-kv-1 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	galqiwi_log (255, 128, 128)
+[T 1674 | 610]	[Info   ]	[Server-kv-1 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	lumberjack_event (255, 128, 128)
 [T 1674 | 610]	[Info   ]	[Server-kv-1 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	galqiwi local_write got (71>32) with a
 [T 1674 | 610]	[Info   ]	[Server-kv-1 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	Write 'a' -> {32, ts: 3/guid-X-13}
 [T 1674 | 610]	[Info   ]	[Server-kv-1 /T2]	[Database    ]	[Set-guid-Y-12]	Put('kv:data:a', '<{
@@ -4100,7 +4100,7 @@ Whirl simulator log
     }
 }>
 [T 1676 | 613]	[Info   ]	[Server-kv-2 /T2]	[RPC-Server  ]	[Get-guid-X-7]	Process Replica.LocalRead request from Server-kv-1, id = 42
-[T 1676 | 613]	[Info   ]	[Server-kv-2 /T2]	[KVNode.Repli]	[Get-guid-X-7]	galqiwi_log (128, 255, 128)
+[T 1676 | 613]	[Info   ]	[Server-kv-2 /T2]	[KVNode.Repli]	[Get-guid-X-7]	lumberjack_event (128, 255, 128)
 [T 1676 | 613]	[Info   ]	[Server-kv-2 /T2]	[Database    ]	[Get-guid-X-7]	TryGet(kv:data:a)
 [T 1676 | 613]	[Info   ]	[Server-kv-2 /T2]	[Network     ]	[Get-guid-X-7]	Send packet to Server-kv-1:2: <{
     "header": {
@@ -4133,7 +4133,7 @@ Whirl simulator log
 }>
 [T 1692 | 616]	[Info   ]	[Server-kv-3 /T2]	[RPC-Server  ]	[Set-guid-Y-12]	Process Replica.LocalWrite request from Server-kv-2, id = 63
 [T 1692 | 616]	[Info   ]	[Server-kv-3 /T2]	[Database    ]	[Set-guid-Y-12]	TryGet(kv:data:a)
-[T 1692 | 616]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	galqiwi_log (255, 128, 128)
+[T 1692 | 616]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	lumberjack_event (255, 128, 128)
 [T 1692 | 616]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	galqiwi local_write got (71>32) with a
 [T 1692 | 616]	[Info   ]	[Server-kv-3 /T2]	[KVNode.Repli]	[Set-guid-Y-12]	Write 'a' -> {32, ts: 3/guid-X-13}
 [T 1692 | 616]	[Info   ]	[Server-kv-3 /T2]	[Database    ]	[Set-guid-Y-12]	Put('kv:data:a', '<{

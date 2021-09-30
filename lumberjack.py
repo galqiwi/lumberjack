@@ -2,7 +2,7 @@ import argparse
 
 import log_parser
 import report
-from log_parser import Message
+from log_parser import Message, Event
 from dataclasses import dataclass
 
 
@@ -29,7 +29,10 @@ def main():
     messages = [Message.parse_str(line) for line in log if
                 Message.is_str_valid(line)]
 
-    report.Report(messages).save(args.image_filename)
+    events = [Event.parse_str(line) for line in log if
+              Event.is_str_valid(line)]
+
+    report.Report(messages, events).save(args.image_filename)
 
 
 if __name__ == '__main__':

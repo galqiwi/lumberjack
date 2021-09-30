@@ -1,7 +1,9 @@
 from typing import List
 import lumberjack
+import log_parser
 from PIL import Image, ImageDraw, ImageFont
-from utils import create_palette
+from utils import create_palette, draw_circle
+
 
 W, H = (1920, 1080)
 dH = 50
@@ -10,8 +12,10 @@ line_w = 3
 
 
 class Report:
-    def __init__(self, messages: List[lumberjack.Message]):
-        timestamps = {message.time for message in messages}
+    def __init__(self, messages: List[log_parser.Message],
+                 events: List[log_parser.Event]):
+        timestamps = {message.time for message in messages} | \
+                     {event.time for event in events}
         timestamps_id = {timestamp: timestamp_id for timestamp_id, timestamp in
                          enumerate(sorted(timestamps))}
 
@@ -53,6 +57,11 @@ class Report:
                     (get_timestamp_x(message.time, True),
                      get_line_y(message.destination))],
                    fill=trackers_color[message.tracker], width=5)
+
+        for event in events:
+            draw_circle(d, (
+            get_timestamp_x(event.time), get_line_y(event.source)), event_r,
+                        event.color)
 
         self.out = out
 
