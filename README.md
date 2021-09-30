@@ -1,6 +1,6 @@
 # Lumberjack
 
-Log visualizer for whirl-framework
+Log visualizer for [whirl-framework](https://gitlab.com/whirl-framework)
 
 ## Установка
 
