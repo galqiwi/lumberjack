@@ -2,8 +2,8 @@ from dataclasses import dataclass
 
 
 def read_log(filename):
-    with open('log.txt', 'r') as file:
-        log = ['[T ' + line for line in file.read().split('[T ')]
+    with open(filename, 'r') as file:
+        return ['[T ' + line for line in file.read().split('[T ')]
 
 
 @dataclass
